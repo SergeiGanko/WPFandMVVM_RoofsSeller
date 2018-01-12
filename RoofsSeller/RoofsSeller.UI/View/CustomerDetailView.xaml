@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="RoofsSeller.UI.View.CustomerDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RoofsSeller.UI.View"
+             xmlns:inf="clr-namespace:RoofsSeller.UI.Infrastructure"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Имя" Margin="10 10 10 0"/>
+        <TextBox Grid.Row="1" Text="{Binding Customer.Name,
+                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
+        <Label Grid.Row="2" Content="Адрес" Margin="10 0"/>
+        <TextBox Grid.Row="3" Text="{Binding Customer.Address,
+                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
+        <Label Grid.Row="4" Content="Инфо" Margin="10 0"/>
+        <TextBox Grid.Row="5" Text="{Binding Customer.Info,
+                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
+        <Label Grid.Row="6" Content="Email" Margin="10 0"/>
+        <TextBox Grid.Row="7" Text="{Binding Customer.Email,
+                TargetNullValue='',
+                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
+        <Label Grid.Row="8" Content="№ телефона" Margin="10 0"/>
+        <TextBox Grid.Row="9" Text="{Binding Customer.Phone,
+                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
+        <!--<DockPanel Grid.Row="10" Margin="10">
+            <StackPanel DockPanel.Dock="Right">
+                <Button Content="Добавить" Width="125" Margin="10"
+                        Command="{Binding AddOrderCommand}"/>
+                <Button Content="Удалить" Width="125" Margin="10"
+                        Command="{Binding RemoveOrderCommand}"/>
+            </StackPanel>
+            <DataGrid ItemsSource="{Binding Orders}"
+                      inf:DataGridBehavior.DisplayRowNumber="True"
+                      SelectedItem="{Binding SelectedOrder, Mode=TwoWay}"
+                      AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="№ заказа" Width="*"
+                       ElementStyle="{StaticResource DataGridColumnStyle}"
+                       EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
+                       Binding="{Binding OrderNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="№ договора" Width="*"
+                       ElementStyle="{StaticResource DataGridColumnStyle}"
+                       EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
+                       Binding="{Binding ContractNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Дата заказа" Width="*"
+                       ElementStyle="{StaticResource DataGridColumnStyle}"
+                       EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
+                       Binding="{Binding OrderDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Состояние заказа" Width="*"
+                       ElementStyle="{StaticResource DataGridColumnStyle}"
+                       EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
+                       Binding="{Binding State, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Дата отгрузки" Width="*"
+                       ElementStyle="{StaticResource DataGridColumnStyle}"
+                       EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
+                       Binding="{Binding ShippingDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <DataGridTextColumn Header="Общая сумма" Width="*"
+                       ElementStyle="{StaticResource DataGridColumnStyle}"
+                       EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
+                       Binding="{Binding TotalAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </DataGrid.Columns> 
+            </DataGrid>
+        </DockPanel>-->
+        <StackPanel Grid.Row="11" Orientation="Horizontal">
+            <Button Content="Сохранить" Width="125" Margin="10"
+                    Command="{Binding SaveCommand}"/>
+            <Button Content="Удалить" Width="125" Margin="10"
+                    Command="{Binding DeleteCommand}"/>
+        </StackPanel> 
+    </Grid>
+</UserControl>

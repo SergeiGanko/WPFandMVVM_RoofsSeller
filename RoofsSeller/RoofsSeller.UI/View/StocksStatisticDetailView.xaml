@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="RoofsSeller.UI.View.StocksStatisticDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:local="clr-namespace:RoofsSeller.UI.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Label Content="Типы продуктов" Margin="10"/>
+            <ComboBox Margin="0 10 0 10" Width="260"
+                      ItemsSource="{Binding ProductTypes}"
+                      DisplayMemberPath="DisplayMember"
+                      SelectedValuePath="Id"
+                      SelectedIndex="0"/>
+            <Button Content="Показать" Margin="10" Width="125"
+                    Command="{Binding ShowStatCommand}"/>
+        </StackPanel>
+
+        <lvc:CartesianChart Grid.Row="1" Margin="10"
+                            Series="{Binding SeriesCollection}" LegendLocation="Bottom">
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Labels="{Binding Labels}"></lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="Количество" LabelFormatter="{Binding Formatter}"></lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+        </lvc:CartesianChart>
+    </Grid>
+</UserControl>
