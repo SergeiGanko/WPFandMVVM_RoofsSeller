@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using RoofsSeller.DataAccess;
 using RoofsSeller.Model.Entities;
 using System.Data.Entity;
@@ -16,6 +17,11 @@ namespace RoofsSeller.UI.Data.Repositories
         {
             return await Context.Products.AsNoTracking()
                 .AnyAsync(p => p.ProductTypeId == productTypeId);
+        }
+
+        public async Task<List<ProductType>> GetAllProductTypesAsync()
+        {
+            return await Context.ProductTypes.ToListAsync();
         }
     }
 }

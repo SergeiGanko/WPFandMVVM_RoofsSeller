@@ -11,37 +11,39 @@
         <inf:ImageSourceConverter x:Key="ImageConverter"/>
     </UserControl.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Label Content="Поставщик" Margin="10 10 10 0"/>
-        <TextBox Grid.Row="1" Text="{Binding Provider.Name,
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="Поставщик" Margin="10 10 10 0"/>
+                <TextBox Grid.Row="1" Text="{Binding Provider.Name,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-        <Label Grid.Row="2" Content="Адрес" Margin="10 10 10 0"/>
-        <TextBox Grid.Row="3" Text="{Binding Provider.Address,
+                <Label Grid.Row="2" Content="Адрес" Margin="10 10 10 0"/>
+                <TextBox Grid.Row="3" Text="{Binding Provider.Address,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-        <Label Grid.Row="4" Content="Телефон" Margin="10 10 10 0"/>
-        <TextBox Grid.Row="5" Text="{Binding Provider.Phone,
+                <Label Grid.Row="4" Content="Телефон" Margin="10 10 10 0"/>
+                <TextBox Grid.Row="5" Text="{Binding Provider.Phone,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-        <Label Grid.Row="6" Content="Email" Margin="10 10 10 0"/>
-        <TextBox Grid.Row="7" Text="{Binding Provider.Email,
+                <Label Grid.Row="6" Content="Email" Margin="10 10 10 0"/>
+                <TextBox Grid.Row="7" Text="{Binding Provider.Email,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-        <Label Grid.Row="8" Content="Инфо" Margin="10 10 10 0"/>
-        <TextBox Grid.Row="9" Text="{Binding Provider.Info,
+                <Label Grid.Row="8" Content="Инфо" Margin="10 10 10 0"/>
+                <TextBox Grid.Row="9" Text="{Binding Provider.Info,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
 
-        <!--<DockPanel Grid.Row="9" Margin="10">
+                <!--<DockPanel Grid.Row="9" Margin="10">
             <StackPanel DockPanel.Dock="Right">
                 <Button Content="+" Width="30" Margin="10"
                         Command="{Binding AddOrderCommand}"/>
@@ -67,13 +69,15 @@
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
-                    --><!--<DataGridComboBoxColumn Header="Тип" Width="Auto"
+                    -->
+                <!--<DataGridComboBoxColumn Header="Тип" Width="Auto"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        ItemsSource="{Binding ProductTypes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                        DisplayMemberPath="DisplayMember"
                        SelectedValuePath="Id"
-                       SelectedValueBinding="{Binding Products.ProductDiscountId, Mode=TwoWay}"/>--><!--
+                       SelectedValueBinding="{Binding Products.ProductDiscountId, Mode=TwoWay}"/>-->
+                <!--
                     <DataGridTextColumn Header="Ед. изм." Width="Auto"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
@@ -94,11 +98,13 @@
             </DataGrid>
         </DockPanel>-->
 
-        <StackPanel Grid.Row="11" Orientation="Horizontal">
-            <Button Content="Сохранить" Width="125" Margin="10"
+                <StackPanel Grid.Row="11" Orientation="Horizontal">
+                    <Button Content="Сохранить" Width="125" Margin="10"
                     Command="{Binding SaveCommand}"/>
-            <Button Content="Удалить" Width="125" Margin="10"
+                    <Button Content="Удалить" Width="125" Margin="10"
                     Command="{Binding DeleteCommand}"/>
-        </StackPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </UserControl>

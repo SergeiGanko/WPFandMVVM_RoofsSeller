@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
-using RoofsSeller.DataAccess;
+﻿using RoofsSeller.DataAccess;
 using RoofsSeller.Model.Entities;
 using System.Linq;
-using System;
 using System.Threading.Tasks;
 using System.Data.Entity;
 

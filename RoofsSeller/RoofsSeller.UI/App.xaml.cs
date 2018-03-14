@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
-using RoofsSeller.UI.ViewModel;
-using RoofsSeller.UI.Data;
 using RoofsSeller.UI.Startup;
 using Autofac;
 
@@ -32,5 +25,7 @@ namespace RoofsSeller.UI
                 + Environment.NewLine + e.Exception.Message, "Unexpected error");
             e.Handled = true;
         }
+
+        
     }
 }

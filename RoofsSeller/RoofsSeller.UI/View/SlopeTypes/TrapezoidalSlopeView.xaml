@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="RoofsSeller.UI.View.SlopeTypes.TrapezoidalSlopeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RoofsSeller.UI.View.SlopeTypes"
+             mc:Ignorable="d" 
+             d:DesignHeight="180" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Margin="5">
+            <Label Content="Сторона а"></Label>
+            <TextBox></TextBox>
+            <Label Content="Сторона b"></Label>
+            <TextBox></TextBox>
+            <Label Content="Высота h"></Label>
+            <TextBox></TextBox>
+        </StackPanel>
+
+        <Canvas Grid.Column="1" Margin="5">
+            <Label Content="a" Canvas.Top="5" Canvas.Left="100"></Label>
+            <Label Content="b" Canvas.Top="110" Canvas.Left="100"></Label>
+            <Label Content="h" Canvas.Top="60" Canvas.Left="85"></Label>
+            <Polygon Canvas.Left="20" Canvas.Top="110"
+                     Stroke="AliceBlue" StrokeThickness="4"
+                     Points="10 0 60 -80 120 -80 140 0"/>
+            <Polygon Canvas.Left="80" Canvas.Top="100"
+                     Stroke="AliceBlue" StrokeThickness="2"
+                     Points="0 0 0 -60"/>
+        </Canvas>
+
+    </Grid>
+</UserControl>

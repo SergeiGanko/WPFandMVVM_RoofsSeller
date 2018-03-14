@@ -4,15 +4,8 @@ using RoofsSeller.UI.Data.Repositories;
 using RoofsSeller.UI.Wrapper;
 using RoofsSeller.Model.Entities;
 using Prism.Commands;
-using System;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
-using System.Collections.Generic;
-using System.Linq;
-using System.ComponentModel;
-using RoofsSeller.UI.Data.Lookups;
-using RoofsSeller.Model;
 
 namespace RoofsSeller.UI.ViewModel
 {

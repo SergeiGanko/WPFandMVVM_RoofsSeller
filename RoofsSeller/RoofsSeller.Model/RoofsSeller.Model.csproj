@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -45,12 +46,18 @@
     <Compile Include="Entities\Order.cs" />
     <Compile Include="Entities\OrderItem.cs" />
     <Compile Include="Entities\OrderState.cs" />
+    <Compile Include="Entities\PipeAbutment.cs" />
+    <Compile Include="Entities\Pipe.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\ProductDiscount.cs" />
     <Compile Include="Entities\ProductMeasure.cs" />
     <Compile Include="Entities\ProductType.cs" />
     <Compile Include="Entities\Provider.cs" />
+    <Compile Include="Entities\PipeShell.cs" />
+    <Compile Include="Entities\PipeUmbrella.cs" />
+    <Compile Include="Entities\Slope.cs" />
     <Compile Include="LookupItem.cs" />
+    <Compile Include="PicClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

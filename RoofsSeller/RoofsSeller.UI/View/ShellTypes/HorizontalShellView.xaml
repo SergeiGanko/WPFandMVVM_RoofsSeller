@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="RoofsSeller.UI.View.ShellTypes.HorizontalShellView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RoofsSeller.UI.View.ShellTypes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="350">
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="5 0 5 0"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="70"></Setter>
+            <Setter Property="IsReadOnly" Value="True"></Setter>
+            <Setter Property="HorizontalContentAlignment" Value="Right"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel>
+        <Label Content="Основные планки, мм (шир. X выс. - кол.)"/>
+        <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
+            <TextBox Text="{Binding PipeShell.MainBarWidthSide13, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="X" Margin="0"></Label>
+            <TextBox Text="{Binding PipeShell.MainBarHeightSide13, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content=" - " Margin="0"></Label>
+            <TextBox Width="30" Text="{Binding PipeShell.MainBarQuantitySide13, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label Content=" шт." Margin="0"></Label>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10 10 10 0">
+            <TextBox Text="{Binding PipeShell.MainBarWidthSide24, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="X" Margin="0"></Label>
+            <TextBox Text="{Binding PipeShell.MainBarHeightSide24, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content=" - " Margin="0"></Label>
+            <TextBox Width="30" Text="{Binding PipeShell.MainBarQuantitySide24, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label Content=" шт." Margin="0"></Label>
+        </StackPanel>
+
+        <Label Content="Металла для основных планок, м.кв"/>
+        <TextBox HorizontalAlignment="Left" Margin="10 0 0 0"
+                 Text="{Binding PipeShell.MainBarMetalRequired, StringFormat={}{0:F}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="Внутренние планки, мм (шир. X выс. - кол.)"/>
+        <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
+            <TextBox Text="{Binding PipeShell.InnerBarWidthSide13, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="X" Margin="0"></Label>
+            <TextBox Text="{Binding PipeShell.InnerBarHeightSide13, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content=" - " Margin="0"></Label>
+            <TextBox Width="30" Text="8"></TextBox>
+            <Label Content=" шт." Margin="0"></Label>
+        </StackPanel>
+
+        <Label Content="Угловые планки, мм (шир. X выс. - кол.)"/>
+        <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
+            <TextBox Text="{Binding PipeShell.CornerBarWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="X" Margin="0"></Label>
+            <TextBox Text="{Binding PipeShell.CornerBarHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content=" - " Margin="0"></Label>
+            <TextBox Width="30" Text="8"></TextBox>
+            <Label Content=" шт." Margin="0"></Label>
+        </StackPanel>
+
+        <Label Content="Закладные планки, мм (шир. X выс. - кол.)"/>
+        <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
+            <TextBox Text="{Binding PipeShell.SubBarWidthSide13, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="X" Margin="0"></Label>
+            <TextBox Text="{Binding PipeShell.SubBarHeightSide13, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content=" - " Margin="0"></Label>
+            <TextBox Width="30" Text="2"></TextBox>
+            <Label Content=" шт." Margin="0"></Label>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="10 10 10 0">
+            <TextBox Text="{Binding PipeShell.SubBarWidthSide24, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content="X" Margin="0"></Label>
+            <TextBox Text="{Binding PipeShell.SubBarHeightSide24, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Content=" - " Margin="0"></Label>
+            <TextBox Width="30" Text="2"></TextBox>
+            <Label Content=" шт." Margin="0"></Label>
+        </StackPanel>
+
+        <Label Content="Металла для внутр., угл., закл. планок, м.кв"/>
+        <TextBox HorizontalAlignment="Left" Margin="10 0 0 0"
+                 Text="{Binding PipeShell.InnerCornerSubBarMetalRequired, StringFormat={}{0:F}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        <Label Content="Стоимость обшивки"/>
+        <TextBox HorizontalAlignment="Left" Margin="10 0 10 10"
+                 Text="{Binding PipeShell.ShellCost, StringFormat={}{0:C}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </StackPanel>
+</UserControl>

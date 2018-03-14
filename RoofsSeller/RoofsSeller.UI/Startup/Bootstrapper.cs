@@ -30,6 +30,8 @@ namespace RoofsSeller.UI.Startup
             builder.RegisterType<OrderDetailViewModel>().Keyed<IDetailViewModel>(nameof(OrderDetailViewModel));
             builder.RegisterType<ProductTypeDetailViewModel>().Keyed<IDetailViewModel>(nameof(ProductTypeDetailViewModel));
             builder.RegisterType<StocksStatisticDetailViewModel>().Keyed<IDetailViewModel>(nameof(StocksStatisticDetailViewModel));
+            builder.RegisterType<ChimneyCalculatingDetailViewModel>().Keyed<IDetailViewModel>(nameof(ChimneyCalculatingDetailViewModel));
+            builder.RegisterType<RoofCalculatorDetailViewModel>().Keyed<IDetailViewModel>(nameof(RoofCalculatorDetailViewModel));
 
             builder.RegisterType<LookupDataService>().AsImplementedInterfaces();
             builder.RegisterType<CustomerRepository>().As<ICustomerRepository>();

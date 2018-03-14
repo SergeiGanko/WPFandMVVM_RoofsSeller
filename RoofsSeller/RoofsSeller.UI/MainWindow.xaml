@@ -8,8 +8,8 @@
         xmlns:view="clr-namespace:RoofsSeller.UI.View"
         xmlns:viewModel="clr-namespace:RoofsSeller.UI.ViewModel"
         mc:Ignorable="d"
-        Title="RoofsSeller" Height="800" Width="1300" FontSize="16"
-        WindowStartupLocation="CenterScreen">
+        Title="RoofsSeller" Height="700" Width="1200" FontSize="16" MinHeight="700" MinWidth="1200"
+        WindowStartupLocation="CenterScreen" Language="de-De" Icon="Images/proskat_logo.jpg">
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewModel:CustomerDetailViewModel}">
             <view:CustomerDetailView/>
@@ -29,6 +29,12 @@
         <DataTemplate DataType="{x:Type viewModel:StocksStatisticDetailViewModel}">
             <view:StocksStatisticDetailView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ChimneyCalculatingDetailViewModel}">
+            <view:ChimneyCalculatingDetailView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:RoofCalculatorDetailViewModel}">
+            <view:RoofCalculatorDetailView/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -42,12 +48,15 @@
 <!-- ******* Menu ******* -->
         <Menu Grid.ColumnSpan="2" FontSize="16">
             <MenuItem Header="Файл">
-                <MenuItem Header="Экспорт XML" Command="{Binding ExportCommand}"
+                <MenuItem Header="Выход" Command="{Binding AppExitCommand}"
+                          CommandParameter="{x:Type viewModel:MainViewModel}">
+                </MenuItem>
+                <!--<MenuItem Header="Экспорт XML" Command="{Binding ExportCommand}"
                           CommandParameter="{x:Type viewModel:ProviderDetailViewModel}">
                 </MenuItem>
                 <MenuItem Header="Импорт XML" Command="{Binding ImportCommand}"
                           CommandParameter="{x:Type viewModel:ProviderDetailViewModel}">
-                </MenuItem>
+                </MenuItem>-->
             </MenuItem>
             <MenuItem Header="Создать">
                 <MenuItem Header="Новый покупатель" Command="{Binding CreateNewDetailCommand}"
@@ -66,6 +75,12 @@
             <MenuItem Header="Статистика">
                 <MenuItem Header="Остатки" Command="{Binding OpenSingleDetailViewCommand}"
                           CommandParameter="{x:Type viewModel:StocksStatisticDetailViewModel}"/>
+            </MenuItem>
+            <MenuItem Header="Сервис">
+                <MenuItem Header="Калькулятор вентканала" Command="{Binding OpenSingleDetailViewCommand}"
+                          CommandParameter="{x:Type viewModel:ChimneyCalculatingDetailViewModel}"/>
+                <!--<MenuItem Header="Калькулятор металлочерепицы" Command="{Binding OpenSingleDetailViewCommand}"
+                          CommandParameter="{x:Type viewModel:RoofCalculatorDetailViewModel}"/>-->
             </MenuItem>
         </Menu>
 <!-- ******* NavigationView UC ******* -->

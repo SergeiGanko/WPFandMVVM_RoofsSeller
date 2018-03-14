@@ -25,6 +25,9 @@ namespace RoofsSeller.Model.Entities
         [Required, Range(0, 1000000)]
         public int StockBalance { get; set; }
 
+        [StringLength(500)]
+        public string Info { get; set; }
+
         [Timestamp]
         public byte[] RowVersion { get; set; }
 

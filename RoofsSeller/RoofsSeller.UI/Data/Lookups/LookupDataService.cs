@@ -144,5 +144,41 @@ namespace RoofsSeller.UI.Data.Lookups
                      .ToListAsync();
             }
         }
+
+        public async Task<IEnumerable<LookupItemExtended>> GetMetalLookupAsync()
+        {
+            using (var ctx = _contextCreator())
+            {
+                return await ctx.Products.AsNoTracking()
+                    .Where(p=>p.ProductType.Type == "Плоский лист")
+                    .Select(p =>
+                        new LookupItemExtended()
+                        {
+                            Id = p.Id,
+                            DisplayMember = p.Name,
+                            Cost = p.Price
+                        })
+                    .OrderBy(e => e.DisplayMember)
+                    .ToListAsync();
+            }
+        }
+
+        public async Task<IEnumerable<LookupItemExtended>> GetRoofingLookupAsync()
+        {
+            using (var ctx = _contextCreator())
+            {
+                return await ctx.Products.AsNoTracking()
+                    .Where(p => p.ProductType.Type == "Модульная металлочерепица")
+                    .Select(p =>
+                        new LookupItemExtended()
+                        {
+                            Id = p.Id,
+                            DisplayMember = p.Name,
+                            Cost = p.Price
+                        })
+                    .OrderBy(e => e.DisplayMember)
+                    .ToListAsync();
+            }
+        }
     }
 }

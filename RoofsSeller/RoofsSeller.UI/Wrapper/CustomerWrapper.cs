@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace RoofsSeller.UI.Wrapper
 {
 
-    public class CustomerWrapper : ModelWrapper<Customer>
+    public sealed class CustomerWrapper : ModelWrapper<Customer>
     {
         public CustomerWrapper(Customer model) : base(model)
         {
@@ -50,7 +50,7 @@ namespace RoofsSeller.UI.Wrapper
                 case nameof(Name):
                     if (string.Equals(Name, "Robot", StringComparison.OrdinalIgnoreCase))
                     {
-                        yield return "Robots are not valid customers";
+                        yield return "Robots are not valid customers =)";
                     }
                     break;
             }

@@ -33,6 +33,7 @@ namespace RoofsSeller.DataAccess.Migrations
                 new ProductType { Type="Утеплитель"},
                 new ProductType { Type="Элементы безопасности кровли"},
                 new ProductType { Type="Крепеж"},
+                new ProductType { Type="Плоский лист"},
                 new ProductType { Type="По умолчанию"}
             );
 
@@ -176,6 +177,7 @@ namespace RoofsSeller.DataAccess.Migrations
                                                Price=10.99m,
                                                StockBalance=1240,
                                                ProductTypeId = 1,
+                                               Info = "Высота волны 35 мм,\nРазмер модуля 750мм*1190 мм,\nПолезный размер модуля 700мм*1150 мм,\nЭффективная площадь модуля 0,805 м.кв",
                                                ProductDiscountId = 1
                                   },
                                   new Product{ Name="BUDMAT Ferrara",
@@ -183,6 +185,7 @@ namespace RoofsSeller.DataAccess.Migrations
                                                Price=13.99m,
                                                StockBalance=542,
                                                ProductTypeId = 1,
+                                               Info = "Высота волны 35 мм,\nРазмер модуля 845мм*1190 мм,\nПолезный размер модуля 800мм*1133 мм,\nЭффективная площадь модуля 0,91 м.кв",
                                                ProductDiscountId = 1
                                   },
                                   new Product{ Name="BUDMAT Murano",
@@ -190,6 +193,7 @@ namespace RoofsSeller.DataAccess.Migrations
                                                Price=7.99m,
                                                StockBalance=746,
                                                ProductTypeId = 1,
+                                               Info = "Высота волны 35 мм,\nРазмер модуля 725мм*1196 мм,\nПолезный размер модуля 700мм*1150 мм,\nЭффективная площадь модуля 0,867 м.кв",
                                                ProductDiscountId = 1
                                   },
                                   new Product{ Name="BUDMAT Rialto",
@@ -197,6 +201,7 @@ namespace RoofsSeller.DataAccess.Migrations
                                                Price=5.99m,
                                                StockBalance=920,
                                                ProductTypeId = 1,
+                                               Info = "Высота волны 35 мм,\nРазмер модуля 735мм*1195 мм,\nПолезный размер модуля 700мм*1150 мм,\nЭффективная площадь модуля 0,805 м.кв",
                                                ProductDiscountId = 1
                                   },
                                   new Product{ Name="Водосточный желоб 2 м.",
@@ -308,6 +313,43 @@ namespace RoofsSeller.DataAccess.Migrations
                                                Price=13.99m,
                                                StockBalance=400,
                                                ProductTypeId = 8,
+                                               ProductDiscountId = 1
+                                  }
+                              }
+                },
+                new Provider { Name ="ArcelorMittal",
+                              Address="ул. Садовая, г. Москва, РФ",
+                              Phone="+7 495 1212-112",
+                              Email="info@arcelor.com",
+                              Products=new List<Product>
+                              {
+                                  new Product{ Name="Dmatt 1,25x2",
+                                               ProductMeasureId = 1,
+                                               Price=9m,
+                                               StockBalance=150,
+                                               ProductTypeId = 9,
+                                               ProductDiscountId = 1
+                                  },
+                                  new Product{ Name="S-Pure 1,25x2",
+                                               ProductMeasureId = 1,
+                                               Price=8m,
+                                               StockBalance=350,
+                                               ProductTypeId = 9,
+                                               ProductDiscountId = 1
+                                  }
+                              }
+                },
+                new Provider { Name ="SSAB AB",
+                              Address="Klarabergsviadukten 70, Stockholm, Sweden",
+                              Phone="+375 29 345-55-11",
+                              Email="info@ssab.com",
+                              Products=new List<Product>
+                              {
+                                  new Product{ Name="Xmatt 1,25x2",
+                                               ProductMeasureId = 1,
+                                               Price=11m,
+                                               StockBalance=100,
+                                               ProductTypeId = 9,
                                                ProductDiscountId = 1
                                   }
                               }

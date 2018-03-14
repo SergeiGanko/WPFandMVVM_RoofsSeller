@@ -1,21 +1,11 @@
-﻿using System;
-using RoofsSeller.Model;
-using RoofsSeller.Model.Entities;
-using System.Linq;
-using RoofsSeller.UI.Data;
+﻿using RoofsSeller.Model.Entities;
 using System.Threading.Tasks;
 using Prism.Events;
-using RoofsSeller.UI.Event;
-using System.Windows.Input;
 using Prism.Commands;
 using RoofsSeller.UI.Wrapper;
 using RoofsSeller.UI.Data.Repositories;
 using RoofsSeller.UI.View.Services;
 using System.Collections.ObjectModel;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.Entity.Infrastructure;
-using RoofsSeller.UI.Data.Lookups;
 
 namespace RoofsSeller.UI.ViewModel
 {

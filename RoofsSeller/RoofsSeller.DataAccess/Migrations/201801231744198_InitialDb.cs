@@ -65,6 +65,7 @@ namespace RoofsSeller.DataAccess.Migrations
                         Name = c.String(nullable: false, maxLength: 200),
                         Price = c.Decimal(nullable: false, storeType: "money"),
                         StockBalance = c.Int(nullable: false),
+                        Info = c.String(maxLength: 500),
                         RowVersion = c.Binary(nullable: false, fixedLength: true, timestamp: true, storeType: "rowversion"),
                         ProductDiscountId = c.Int(),
                         ProductTypeId = c.Int(nullable: false),

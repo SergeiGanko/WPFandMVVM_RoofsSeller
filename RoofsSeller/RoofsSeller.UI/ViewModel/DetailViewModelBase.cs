@@ -1,14 +1,10 @@
 ﻿using Prism.Commands;
 using Prism.Events;
-using RoofsSeller.Model;
 using RoofsSeller.UI.Event;
 using RoofsSeller.UI.View.Services;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -22,7 +18,7 @@ namespace RoofsSeller.UI.ViewModel
         private int _id;
         private string _title;
 
-        public DetailViewModelBase(IEventAggregator eventAggregator,
+        protected DetailViewModelBase(IEventAggregator eventAggregator,
             IMessageDialogService messageDialogService)
         {
             EventAggregator = eventAggregator;
@@ -31,6 +27,7 @@ namespace RoofsSeller.UI.ViewModel
             DeleteCommand = new DelegateCommand(OnDeleteExecute);
             CloseDetailViewCommand = new DelegateCommand(OnCloseDetailViewExecute);
         }
+
 
         public abstract Task LoadAsync(int Id);
 

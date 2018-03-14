@@ -13,7 +13,7 @@ namespace RoofsSeller.DataAccess.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201711211424309_InitialDb"; }
+            get { return "201801231744198_InitialDb"; }
         }
         
         string IMigrationMetadata.Source

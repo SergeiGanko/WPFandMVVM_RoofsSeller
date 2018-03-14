@@ -118,6 +118,9 @@
     <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.1\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -172,6 +175,7 @@
     <Compile Include="Infrastructure\DataGridBehavior.cs" />
     <Compile Include="Infrastructure\ImageSourceConverter.cs" />
     <Compile Include="Startup\Bootstrapper.cs" />
+    <Compile Include="ViewModel\ChimneyCalculatingDetailViewModel.cs" />
     <Compile Include="ViewModel\CustomerDetailViewModel.cs" />
     <Compile Include="ViewModel\DetailViewModelBase.cs" />
     <Compile Include="ViewModel\ICustomerDetailViewModel.cs" />
@@ -188,8 +192,22 @@
     <Compile Include="ViewModel\ProductDetailViewModel.cs" />
     <Compile Include="ViewModel\ProductTypeDetailViewModel.cs" />
     <Compile Include="ViewModel\ProviderDetailViewModel.cs" />
+    <Compile Include="ViewModel\RoofCalculatorDetailViewModel.cs" />
+    <Compile Include="ViewModel\ShellTypesViewModel\ExclusiveShellViewModel.cs" />
+    <Compile Include="ViewModel\ShellTypesViewModel\HorizontalShellViewModel.cs" />
+    <Compile Include="ViewModel\ShellTypesViewModel\VerticalShellViewModel.cs" />
+    <Compile Include="ViewModel\SlopeTypesViewModel\ParallelogramSlopeViewModel.cs" />
+    <Compile Include="ViewModel\SlopeTypesViewModel\RectangularSlopeViewModel.cs" />
+    <Compile Include="ViewModel\SlopeTypesViewModel\TrapezoidalSlopeViewModel.cs" />
+    <Compile Include="ViewModel\SlopeTypesViewModel\TriangularSlopeViewModel.cs" />
     <Compile Include="ViewModel\StocksStatisticDetailViewModel.cs" />
+    <Compile Include="ViewModel\UmbrellaTypesViewModel\EconomUmbrellaViewModel.cs" />
+    <Compile Include="ViewModel\UmbrellaTypesViewModel\PremiumUmbrellaViewModel.cs" />
+    <Compile Include="ViewModel\UmbrellaTypesViewModel\StandartUmbrellaViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\ChimneyCalculatingDetailView.xaml.cs">
+      <DependentUpon>ChimneyCalculatingDetailView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\CustomerDetailView.xaml.cs">
       <DependentUpon>CustomerDetailView.xaml</DependentUpon>
     </Compile>
@@ -208,13 +226,46 @@
     <Compile Include="View\ProviderDetailView.xaml.cs">
       <DependentUpon>ProviderDetailView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RoofCalculatorDetailView.xaml.cs">
+      <DependentUpon>RoofCalculatorDetailView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Services\IMessageDialogService.cs" />
     <Compile Include="View\Services\MessageDialogService.cs" />
     <Compile Include="View\OrderDetailView.xaml.cs">
       <DependentUpon>OrderDetailView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ShellTypes\ExclusiveShell.xaml.cs">
+      <DependentUpon>ExclusiveShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShellTypes\HorizontalShellView.xaml.cs">
+      <DependentUpon>HorizontalShellView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ShellTypes\VerticalShell.xaml.cs">
+      <DependentUpon>VerticalShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SlopeTypes\ParallelogramSlopeView.xaml.cs">
+      <DependentUpon>ParallelogramSlopeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SlopeTypes\RectangularSlopeView.xaml.cs">
+      <DependentUpon>RectangularSlopeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SlopeTypes\TrapezoidalSlopeView.xaml.cs">
+      <DependentUpon>TrapezoidalSlopeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SlopeTypes\TriangularSlopeView.xaml.cs">
+      <DependentUpon>TriangularSlopeView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\StocksStatisticDetailView.xaml.cs">
       <DependentUpon>StocksStatisticDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UmbrellaTypes\EconomUmbrellaView.xaml.cs">
+      <DependentUpon>EconomUmbrellaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UmbrellaTypes\PremiumUmbrellaView.xaml.cs">
+      <DependentUpon>PremiumUmbrellaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UmbrellaTypes\StandartUmbrellaView.xaml.cs">
+      <DependentUpon>StandartUmbrellaView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Wrapper\CustomerWrapper.cs" />
     <Compile Include="Wrapper\ModelWrapper.cs" />
@@ -222,11 +273,16 @@
     <Compile Include="Wrapper\OrderItemWrapper.cs" />
     <Compile Include="Wrapper\OrderStateWrapper.cs" />
     <Compile Include="Wrapper\OrderWrapper.cs" />
+    <Compile Include="Wrapper\PipeAbutmentWrapper.cs" />
+    <Compile Include="Wrapper\PipeShellWrapper.cs" />
+    <Compile Include="Wrapper\PipeUmbrellaWrapper.cs" />
+    <Compile Include="Wrapper\PipeWrapper.cs" />
     <Compile Include="Wrapper\ProductDiscountWrapper.cs" />
     <Compile Include="Wrapper\ProductMeasureWrapper.cs" />
     <Compile Include="Wrapper\ProductTypeWrapper.cs" />
     <Compile Include="Wrapper\ProductWrapper.cs" />
     <Compile Include="Wrapper\ProviderWrapper.cs" />
+    <Compile Include="Wrapper\SlopeWrapper.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -239,6 +295,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ChimneyCalculatingDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\CustomerDetailView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -267,7 +327,51 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\RoofCalculatorDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ShellTypes\ExclusiveShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ShellTypes\HorizontalShellView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ShellTypes\VerticalShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SlopeTypes\ParallelogramSlopeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SlopeTypes\RectangularSlopeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SlopeTypes\TrapezoidalSlopeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SlopeTypes\TriangularSlopeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\StocksStatisticDetailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UmbrellaTypes\EconomUmbrellaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UmbrellaTypes\PremiumUmbrellaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UmbrellaTypes\StandartUmbrellaView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -290,6 +394,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -308,6 +413,15 @@
       <Project>{f00162f8-63fa-4455-8ca7-9ff1c38033a6}</Project>
       <Name>RoofsSeller.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\parallel.PNG" />
+    <Resource Include="Images\rectangle.png" />
+    <Resource Include="Images\trapez.PNG" />
+    <Resource Include="Images\triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\proskat_logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.1\build\netstandard2.0\NETStandard.Library.targets')" />

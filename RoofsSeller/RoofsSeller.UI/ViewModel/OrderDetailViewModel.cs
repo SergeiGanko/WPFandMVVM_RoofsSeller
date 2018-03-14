@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Prism.Events;
 using RoofsSeller.UI.Data.Repositories;
@@ -22,12 +21,12 @@ namespace RoofsSeller.UI.ViewModel
     {
         private OrderWrapper _order;
         private OrderItemWrapper _selectedOrderItem;
-        private IOrderRepository _orderRepository;
+        private readonly IOrderRepository _orderRepository;
         private Product _selectedAvailableProduct;
         private Product _selectedAddedProduct;
 
-        private ICustomerLookupDataService _customerLookupDataService;
-        private IOrderStateLookupDataService _orderStateLookupDataService;
+        private readonly ICustomerLookupDataService _customerLookupDataService;
+        private readonly IOrderStateLookupDataService _orderStateLookupDataService;
         private IProductTypeLookupDataService _productTypeLookupDataService;
         private List<Product> _allProducts;
 
@@ -105,10 +104,6 @@ namespace RoofsSeller.UI.ViewModel
                 OnPropertyChanged();
             }
         }
-
-        //public ICommand AddOrderItemCommand { get; }
-
-        //public ICommand RemoveOrderItemCommand { get; }
 
         public ObservableCollection<OrderItemWrapper> OrderItems { get; }
 
@@ -263,58 +258,6 @@ namespace RoofsSeller.UI.ViewModel
             }
         }
 
-        //private void InitializeOrderItems(ICollection<OrderItem> orderItems)
-        //{
-        //    foreach (var wrapper in OrderItems)
-        //    {
-        //        wrapper.PropertyChanged -= OrderItemWrapper_PropertyChanged;
-        //    }
-        //    OrderItems.Clear();
-        //    foreach (var orderItem in orderItems)
-        //    {
-        //        var wrapper = new OrderItemWrapper(orderItem);
-        //        OrderItems.Add(wrapper);
-        //        wrapper.PropertyChanged += OrderItemWrapper_PropertyChanged;
-        //    }
-        //}
-
-        //private void OrderItemWrapper_PropertyChanged(object sender, PropertyChangedEventArgs e)
-        //{
-        //    if (!HasChanges)
-        //    {
-        //        HasChanges = _orderRepository.HasChanges();
-        //    }
-        //    if (e.PropertyName == nameof(OrderItemWrapper.HasErrors))
-        //    {
-        //        ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
-        //    }
-        //}
-
-        //private void OnAddOrderItemExecute()
-        //{
-        //    var newItem = new OrderItemWrapper(new OrderItem());
-
-        //    newItem.PropertyChanged += OrderItemWrapper_PropertyChanged;
-        //    OrderItems.Add(newItem);
-        //    Order.Model.OrderItems.Add(newItem.Model);
-        //}
-
-        //private bool OnRemoveOrderItemCanExecute()
-        //{
-        //    return SelectedOrderItem != null;
-        //}
-
-        //private void OnRemoveOrderItemExecute()
-        //{
-        //    SelectedOrderItem.PropertyChanged -= OrderItemWrapper_PropertyChanged;
-        //    _orderRepository.RemoveOrderItem(SelectedOrderItem.Model);
-        //    OrderItems.Remove(SelectedOrderItem);
-        //    SelectedOrderItem = null;
-        //    HasChanges = _orderRepository.HasChanges();
-        //    ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
-        //}
-
-        // ???????????????????????
         private int _productQuantityToAdd;
 
         public int ProductQuantityToAdd
@@ -326,7 +269,11 @@ namespace RoofsSeller.UI.ViewModel
                 if (SelectedAvailableProduct.StockBalance < _productQuantityToAdd)
                 {
                     _productQuantityToAdd = SelectedAvailableProduct.StockBalance;
-                    // TODO: выдавать предупреждение.
+                    MessageDialogService.ShowInfoDialogAsync(
+                        $"Невозможно добавить заданное количество товара " +
+                        $"({_productQuantityToAdd} {SelectedAvailableProduct.ProductMeasure.Measure}) в заказ," +
+                        $" т.к. остаток товара на складе " +
+                        $"{SelectedAvailableProduct.StockBalance} {SelectedAvailableProduct.ProductMeasure.Measure}");
                 }
                 OnPropertyChanged();
             }
@@ -335,7 +282,7 @@ namespace RoofsSeller.UI.ViewModel
         private void OnAddProductExecute()
         {
             var productToAdd = SelectedAvailableProduct;
-            decimal discount = (decimal)(100 - productToAdd.ProductDiscount.Rate) / 100;
+            decimal discount = (100m - Convert.ToDecimal(productToAdd.ProductDiscount.Rate)) / 100m;
 
             Order.Model.OrderItems.Add(new OrderItem
             {
@@ -364,6 +311,7 @@ namespace RoofsSeller.UI.ViewModel
         private void OnRemoveProductExecute()
         {
             var productToRemove = SelectedAddedProduct;
+            // &???????????????????????????????????
             OrderItem orderItemToRemove = productToRemove.OrderItems.FirstOrDefault(o => o.ProductId == productToRemove.Id);
 
             Order.Model.OrderItems.Remove(orderItemToRemove);
@@ -420,8 +368,10 @@ namespace RoofsSeller.UI.ViewModel
             {
                 _allProducts = await _orderRepository.GetAllProductsAsync();
                 SetupPicklist();
-                var order = await _orderRepository.GetByIdAsync(args.Id);
-                InitializeOrderItems(order.OrderItems);
+                // При удалении заказа вылазит InvalidOperationException!!!!!!!!!
+                //var order = await _orderRepository.GetByIdAsync(args.Id);
+
+                //InitializeOrderItems(order.OrderItems);
             }
         }
     }

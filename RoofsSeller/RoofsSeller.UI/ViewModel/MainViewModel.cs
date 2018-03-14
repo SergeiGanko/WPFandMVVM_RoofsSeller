@@ -1,9 +1,6 @@
 ﻿using Autofac.Features.Indexed;
 using Prism.Commands;
 using Prism.Events;
-using RoofsSeller.Model;
-using RoofsSeller.Model.Entities;
-using RoofsSeller.UI.Data;
 using RoofsSeller.UI.Data.Repositories;
 using RoofsSeller.UI.Event;
 using RoofsSeller.UI.View.Services;
@@ -48,8 +45,13 @@ namespace RoofsSeller.UI.ViewModel
             OpenSingleDetailViewCommand = new DelegateCommand<Type>(OpenSingleDetailViewExecute);
             ExportCommand = new DelegateCommand(OnExportExecute);
             ImportCommand = new DelegateCommand(OnImportExecute);
-
+            AppExitCommand = new DelegateCommand(AppExitExecute);
             NavigationViewModel = navigationViewModel;
+        }
+
+        private void AppExitExecute()
+        {
+            if (Application.Current.MainWindow != null) Application.Current.MainWindow.Close();
         }
 
         public async Task LoadAsync()
@@ -64,6 +66,8 @@ namespace RoofsSeller.UI.ViewModel
         public ICommand ExportCommand { get; }
 
         public ICommand ImportCommand { get; }
+
+        public ICommand AppExitCommand { get; }
 
         public INavigationViewModel NavigationViewModel { get; }
 

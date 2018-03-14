@@ -9,5 +9,6 @@ namespace RoofsSeller.UI.Data.Repositories
         Task<List<Provider>> GetAllProvidersAsync();
         Task ReloadProviderAsync(int providerId);
         Task<List<Product>> GetAllProductsAsync();
+        Task<List<ProductMeasure>> GetAllMeasuresAsync();
     }
 }

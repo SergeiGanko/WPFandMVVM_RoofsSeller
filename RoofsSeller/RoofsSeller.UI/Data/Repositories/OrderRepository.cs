@@ -1,6 +1,5 @@
 ﻿using RoofsSeller.DataAccess;
 using RoofsSeller.Model.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
@@ -14,7 +13,7 @@ namespace RoofsSeller.UI.Data.Repositories
         {
         }
 
-        public async override Task<Order> GetByIdAsync(int id)
+        public override async Task<Order> GetByIdAsync(int id)
         {
             return await Context.Orders
                 .Include(o => o.Customer)

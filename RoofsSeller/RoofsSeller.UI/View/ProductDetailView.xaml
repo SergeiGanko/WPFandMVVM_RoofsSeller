@@ -6,62 +6,69 @@
              xmlns:local="clr-namespace:RoofsSeller.UI.View"
              xmlns:model="clr-namespace:RoofsSeller.Model.Entities;assembly=RoofsSeller.Model"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="300">
+             d:DesignHeight="600" d:DesignWidth="300">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Label Content="Наименование" Margin="10 10 10 0"/>
-        <TextBox Grid.Row="1" Text="{Binding Product.Name,
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="Наименование" Margin="10 10 10 0"/>
+                <TextBox Grid.Row="1" Text="{Binding Product.Name,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-        <Label Grid.Row="2" Content="Тип продукта" Margin="10 0"/>
-        <ComboBox Grid.Row="3" Margin="10 0 10 10"
+                <Label Grid.Row="2" Content="Тип продукта" Margin="10 0"/>
+                <ComboBox Grid.Row="3" Margin="10 0 10 10"
                   ItemsSource="{Binding ProductTypes}"
                   DisplayMemberPath="DisplayMember"
                   SelectedValuePath="Id"
                   SelectedValue="{Binding Product.ProductTypeId, Mode=TwoWay}"/>
-        <Label Grid.Row="4" Content="Поставщик" Margin="10 0"/>
-        <ComboBox Grid.Row="5" Margin="10 0 10 10"
+                <Label Grid.Row="4" Content="Поставщик" Margin="10 0"/>
+                <ComboBox Grid.Row="5" Margin="10 0 10 10"
                   ItemsSource="{Binding Providers}"
                   DisplayMemberPath="DisplayMember"
                   SelectedValuePath="Id"
                   SelectedValue="{Binding Product.ProviderId, Mode=TwoWay}"/>
-        <Label Grid.Row="6" Content="Цена" Margin="10 0"/>
-        <TextBox Grid.Row="7" Text="{Binding Product.Price, StringFormat={}{0:C},
+                <Label Grid.Row="6" Content="Цена" Margin="10 0"/>
+                <TextBox Grid.Row="7" Text="{Binding Product.Price, StringFormat={}{0:C},
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-        <Label Grid.Row="8" Content="Скидка" Margin="10 0"/>
-        <ComboBox Grid.Row="9" Margin="10 0 10 10"
+                <Label Grid.Row="8" Content="Скидка" Margin="10 0"/>
+                <ComboBox Grid.Row="9" Margin="10 0 10 10"
                   ItemsSource="{Binding ProductDiscounts}"
                   ItemStringFormat="{}{0}%"
                   DisplayMemberPath="DisplayMember"
                   SelectedValuePath="Id"
                   SelectedValue="{Binding Product.ProductDiscountId, Mode=TwoWay}"/>
-        <Label Grid.Row="10" Content="Ед.Измерения" Margin="10 0"/>
-        <ComboBox Grid.Row="11" Margin="10 0 10 10"
+                <Label Grid.Row="10" Content="Ед.Измерения" Margin="10 0"/>
+                <ComboBox Grid.Row="11" Margin="10 0 10 10"
                   ItemsSource="{Binding ProductMeasures}"
                   DisplayMemberPath="DisplayMember"
                   SelectedValuePath="Id"
                   SelectedValue="{Binding Product.ProductMeasureId, Mode=TwoWay}"/>
-        <Label Grid.Row="12" Content="Остаток" Margin="10 0"/>
-        <TextBox Grid.Row="13" Text="{Binding Product.StockBalance,
+                <Label Grid.Row="12" Content="Остаток" Margin="10 0"/>
+                <TextBox Grid.Row="13" Text="{Binding Product.StockBalance,
+                Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
+                <Label Grid.Row="14" Content="Технические характеристики" Margin="10 0"/>
+                <TextBox Grid.Row="15" Height="70" Text="{Binding Product.Info,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
 
-        <!--<Grid Grid.Row="14" Margin="10">
+                <!--<Grid Grid.Row="14" Margin="10">
             <Grid.Resources>
                 <DataTemplate DataType="{x:Type model:Provider}">
                     <TextBlock><Run Text="{Binding Name}"/></TextBlock>
@@ -92,12 +99,14 @@
                       ItemsSource="{Binding AvailableProviders}"
                       SelectedItem="{Binding SelectedAvailableProvider}"/>
         </Grid>-->
-        
-        <StackPanel Grid.Row="15" Orientation="Horizontal">
-            <Button Content="Сохранить" Width="125" Margin="10"
+
+                <StackPanel Grid.Row="17" Orientation="Horizontal">
+                    <Button Content="Сохранить" Width="125" Margin="10"
                     Command="{Binding SaveCommand}"/>
-            <Button Content="Удалить" Width="125" Margin="10"
+                    <Button Content="Удалить" Width="125" Margin="10"
                     Command="{Binding DeleteCommand}"/>
-        </StackPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </UserControl>

@@ -10,4 +10,9 @@
     {
         public new int? Id { get { return null; } }
     }
+
+    public class LookupItemExtended : LookupItem
+    {
+        public decimal Cost { get; set; }
+    }
 }

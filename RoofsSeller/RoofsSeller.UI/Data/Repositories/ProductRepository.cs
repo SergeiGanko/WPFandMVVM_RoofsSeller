@@ -13,7 +13,7 @@ namespace RoofsSeller.UI.Data.Repositories
         {
         }
 
-        public async override Task<Product> GetByIdAsync(int id)
+        public override async Task<Product> GetByIdAsync(int id)
         {
             return await Context.Products
                 .Include(p => p.ProductType)
@@ -40,24 +40,13 @@ namespace RoofsSeller.UI.Data.Repositories
         {
             return await Context.Products
                 .Include(p => p.ProductType)
+                .Include(p => p.ProductMeasure)
                 .ToListAsync();
         }
 
-        public async Task<List<Product>> GetProductsByProductTypeId(int productTypeId)
+        public async Task<List<ProductMeasure>> GetAllMeasuresAsync()
         {
-            return await Context.Products
-                .Where(p => p.ProductTypeId == productTypeId)
-                .ToListAsync();
+            return await Context.ProductMeasures.ToListAsync();
         }
-
-        //public async Task<List<OrderItem>> GetAllSalesStatisticAsync()
-        //{
-        //    var result = from oi in Context.OrderItems
-        //                 join p in Context.Products on oi.ProductId ==  
-
-        //    return await Context.OrderItems
-        //        .Include(o => o.Product)
-        //        .ToListAsync();
-        //}
     }
 }

@@ -1,13 +1,9 @@
 ﻿using Prism.Events;
-using RoofsSeller.Model;
-using RoofsSeller.Model.Entities;
 using RoofsSeller.UI.Data;
 using RoofsSeller.UI.Data.Lookups;
 using RoofsSeller.UI.Event;
-using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace RoofsSeller.UI.ViewModel

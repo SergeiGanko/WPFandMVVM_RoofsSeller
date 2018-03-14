@@ -28,6 +28,12 @@ namespace RoofsSeller.UI.Wrapper
             set { SetValue(value); }
         }
 
+        public string Info
+        {
+            get { return GetValue<string>(); }
+            set { SetValue(value); }
+        }
+
         public int? ProductDiscountId
         {
             get { return GetValue<int?>(); }

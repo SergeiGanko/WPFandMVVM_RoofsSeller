@@ -1,20 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Prism.Events;
 using RoofsSeller.UI.View.Services;
 using RoofsSeller.UI.Data.Repositories;
 using System.Collections.ObjectModel;
-using RoofsSeller.UI.Wrapper;
 using Prism.Commands;
-using System.ComponentModel;
-using System.Windows.Controls;
 using LiveCharts;
 using LiveCharts.Wpf;
-using RoofsSeller.UI.Data.Lookups;
-using RoofsSeller.Model;
 using System.Windows.Input;
 using RoofsSeller.Model.Entities;
 
@@ -23,21 +17,22 @@ namespace RoofsSeller.UI.ViewModel
     public class StocksStatisticDetailViewModel : DetailViewModelBase
     {
         private IProductRepository _productRepository;
-        private IProductTypeLookupDataService _productTypeLookupDataService;
         private Product _product;
+        private ProductType _selectedProductType;
+        private IProductTypeRepository _productTypeRepository;
+        private ProductMeasure _selectedProductMeasure;
 
         public StocksStatisticDetailViewModel(IEventAggregator eventAggregator,
             IMessageDialogService messageDialogService,
             IProductRepository productRepository,
-            IProductTypeLookupDataService productTypeLookupDataService) : base(eventAggregator, messageDialogService)
+            IProductTypeRepository productTypeRepository) : base(eventAggregator, messageDialogService)
         {
             _productRepository = productRepository;
-            _productTypeLookupDataService = productTypeLookupDataService;
+            _productTypeRepository = productTypeRepository;
             Title = "Остатки на складе";
 
             Products = new ObservableCollection<Product>();
-            ProductTypes = new ObservableCollection<LookupItem>();
-
+            ProductTypes = new ObservableCollection<ProductType>();
             SeriesCollection = new SeriesCollection();
             //Formatter = value => value.ToString("N");
             Labels = new List<string>();
@@ -45,37 +40,33 @@ namespace RoofsSeller.UI.ViewModel
             ShowStatCommand = new DelegateCommand(OnShowStatExecute);
         }
 
-        public override async Task LoadAsync(int productId)
-        {
-            Id = productId;
-
-            Products.Clear();
-
-            var products = await _productRepository.GetAllProductsAsync();
-
-            await LoadProductTypeLookupAsync();
-
-            foreach (var product in products)
-            {
-                Products.Add(product);
-
-                if (product.ProductTypeId == 1)
-                {
-                    SeriesCollection.Add(new ColumnSeries
-                    {
-                        Title = product.Name,
-                        Values = new ChartValues<int> { product.StockBalance }
-                    });
-                }
-                Labels.Add(product.ProductType.Type);
-            }
-        }
-
         public SeriesCollection SeriesCollection { get; }
         public List<string> Labels { get; }
         public Func<double, string> Formatter { get; }
 
-        public ObservableCollection<LookupItem> ProductTypes { get; }
+        public ObservableCollection<ProductType> ProductTypes { get; }
+
+        public ProductType SelectedProductType
+        {
+            get { return _selectedProductType; }
+            set
+            {
+                _selectedProductType = value;
+                OnPropertyChanged();
+            }
+        }
+
+        //public ObservableCollection<ProductMeasure> ProductMeasures { get; }
+
+        public ProductMeasure SelectedProductMeasure
+        {
+            get { return _selectedProductMeasure; }
+            set
+            {
+                _selectedProductMeasure = value;
+                OnPropertyChanged();
+            }
+        }
 
         public ObservableCollection<Product> Products { get; }
 
@@ -89,8 +80,75 @@ namespace RoofsSeller.UI.ViewModel
             }
         }
 
-
         public ICommand ShowStatCommand { get; }
+
+        public override async Task LoadAsync(int productId)
+        {
+            Id = productId;
+
+            Products.Clear();
+
+            var products = await _productRepository.GetAllProductsAsync();
+
+            foreach (var product in products)
+            {
+                Products.Add(product);
+            }
+
+            var prodTypes = await _productTypeRepository.GetAllProductTypesAsync();
+
+            foreach (var prodType in prodTypes)
+            {
+                ProductTypes.Add(prodType);
+            }
+
+            SelectedProductType = ProductTypes.First();
+            Product = Products.First(s => s.ProductTypeId == SelectedProductType.Id);
+            SelectedProductMeasure = Product.ProductMeasure;
+
+            foreach (var product in Products)
+            {
+                if (product.ProductTypeId == SelectedProductType.Id)
+                {
+                    SeriesCollection.Add(new ColumnSeries
+                    {
+                        Title = product.Name,
+                        Values = new ChartValues<int> { product.StockBalance }
+                    });
+                    Labels.Add(product.ProductType.Type);
+                }
+            }
+        }
+
+        private async void OnShowStatExecute()
+        {
+            SeriesCollection.Clear();
+            Labels.Clear();
+
+            foreach (var product in Products)
+            {
+                if (product.ProductTypeId == SelectedProductType.Id)
+                {
+                    SeriesCollection.Add(new ColumnSeries
+                    {
+                        Title = product.Name,
+                        Values = new ChartValues<int> { product.StockBalance }
+                    });
+                    Labels.Add(product.ProductType.Type);
+                }
+            }
+
+            Product = Products.FirstOrDefault(s => s.ProductTypeId == SelectedProductType.Id);
+            if (Product != null)
+            {
+                SelectedProductMeasure = Product.ProductMeasure;
+            }
+            else
+            {
+                await MessageDialogService.ShowInfoDialogAsync(
+                        "Продуктов указанного типа нет на складе");
+            }
+        }
 
         protected override void OnDeleteExecute()
         {
@@ -103,22 +161,6 @@ namespace RoofsSeller.UI.ViewModel
         }
 
         protected override void OnSaveExecute()
-        {
-            throw new NotImplementedException();
-        }
-
-        private async Task LoadProductTypeLookupAsync()
-        {
-            ProductTypes.Clear();
-            //ProductTypes.Add(new NullLookupItem { DisplayMember = " - " });
-            var lookup = await _productTypeLookupDataService.GetProductTypeLookupAsync();
-            foreach (var lookupItem in lookup)
-            {
-                ProductTypes.Add(lookupItem);
-            }
-        }
-
-        private void OnShowStatExecute()
         {
             throw new NotImplementedException();
         }

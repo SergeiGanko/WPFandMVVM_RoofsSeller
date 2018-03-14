@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Prism.Events;
 using RoofsSeller.UI.View.Services;
@@ -15,9 +13,9 @@ using RoofsSeller.Model.Entities;
 
 namespace RoofsSeller.UI.ViewModel
 {
-    public class ProductTypeDetailViewModel : DetailViewModelBase
+    internal sealed class ProductTypeDetailViewModel : DetailViewModelBase
     {
-        private IProductTypeRepository _productTypeRepository;
+        private readonly IProductTypeRepository _productTypeRepository;
         private ProductTypeWrapper _selectedProductType;
 
         public ProductTypeDetailViewModel(IEventAggregator eventAggregator, 

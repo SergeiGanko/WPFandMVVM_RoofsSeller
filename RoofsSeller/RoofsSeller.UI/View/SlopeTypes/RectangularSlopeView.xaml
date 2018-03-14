@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="RoofsSeller.UI.View.SlopeTypes.RectangularSlopeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RoofsSeller.UI.View.SlopeTypes"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Margin="5">
+            <Label Content="Сторона а"></Label>
+            <TextBox Text="{Binding SideA, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label Content="Сторона b"></Label>
+            <TextBox Text="{Binding SideB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </StackPanel>
+        
+        <Canvas Grid.Column="1" Margin="5">
+            <Label Content="a" Canvas.Top="0" Canvas.Left="75"></Label>
+            <Label Content="b" Canvas.Top="50" Canvas.Left="5"></Label>
+            <Rectangle Stroke="AliceBlue" 
+                       StrokeThickness="4" 
+                       Height="80" Width="120"
+                       Margin="25 25 0 0"/>
+        </Canvas>
+    </Grid>
+</UserControl>

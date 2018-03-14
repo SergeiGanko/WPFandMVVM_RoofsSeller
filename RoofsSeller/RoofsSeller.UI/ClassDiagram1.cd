@@ -1,0 +1,879 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RoofsSeller.UI.App" Collapsed="true">
+    <Position X="41" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="46.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAABAAAAEAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.Data.Lookups.LookupDataService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="46.25" Y="11.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAABgAABAQQQAAgAAAABAAAEAAAAAACAAAA=</HashCode>
+      <FileName>Data\Lookups\LookupDataService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.Data.Repositories.CustomerRepository" Collapsed="true">
+    <Position X="33.5" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQAAAAIAA=</HashCode>
+      <FileName>Data\Repositories\CustomerRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.Data.Repositories.GenericRepository&lt;TEntity, TContext&gt;" Collapsed="true">
+    <Position X="36.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMAAAAAAgAAAEAAAAAABAAAAIAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Data\Repositories\GenericRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.Data.Repositories.OrderRepository" Collapsed="true">
+    <Position X="35.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAgAAAAAAAEAAAAAAAAAACAAAAAEAAAAIAA=</HashCode>
+      <FileName>Data\Repositories\OrderRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.Data.Repositories.OrderStateRepository" Collapsed="true">
+    <Position X="35.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\OrderStateRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.Data.Repositories.ProductRepository" Collapsed="true">
+    <Position X="37.5" Y="6.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Data\Repositories\ProductRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.Data.Repositories.ProductTypeRepository" Collapsed="true">
+    <Position X="33.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\ProductTypeRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.Data.Repositories.ProviderRepository" Collapsed="true">
+    <Position X="37.5" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Data\Repositories\ProviderRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.Event.AfterCollectionSavedEvent" Collapsed="true">
+    <Position X="43.5" Y="8.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Event\AfterCollectionSavedEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Event.AfterCollectionSavedEventArgs" Collapsed="true">
+    <Position X="43.5" Y="9.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Event\AfterCollectionSavedEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Event.AfterDetailClosedEvent" Collapsed="true">
+    <Position X="46.25" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Event\AfterDetailClosedEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Event.AfterDetailClosedEventArgs" Collapsed="true">
+    <Position X="46.25" Y="9.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Event\AfterDetailClosedEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Event.AfterDetailDeletedEvent" Collapsed="true">
+    <Position X="43.5" Y="10.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Event\AfterDetailDeletedEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Event.AfterDetailDeletedEventArgs" Collapsed="true">
+    <Position X="43.5" Y="11.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Event\AfterDetailDeletedEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Event.AfterDetailSavedEvent" Collapsed="true">
+    <Position X="41" Y="10.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Event\AfterDetailSavedEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Event.AfterDetailSavedEventArgs" Collapsed="true">
+    <Position X="41" Y="11.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAA=</HashCode>
+      <FileName>Event\AfterDetailSavedEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Event.OpenDetailViewEvent" Collapsed="true">
+    <Position X="41" Y="8.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Event\OpenDetailViewEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Event.OpenDetailViewEventArgs" Collapsed="true">
+    <Position X="41" Y="9.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Event\OpenDetailViewEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Infrastructure.DataGridBehavior" Collapsed="true">
+    <Position X="42.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAAAAAAAgAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\DataGridBehavior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Infrastructure.ImageSourceConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAACAgAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\ImageSourceConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.Properties.Resources" Collapsed="true">
+    <Position X="42.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Properties.Settings" Collapsed="true">
+    <Position X="46.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Startup.Bootstrapper" Collapsed="true">
+    <Position X="46.25" Y="10.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Startup\Bootstrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.View.ChimneyCalculatingDetailView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="42.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ChimneyCalculatingDetailView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.CustomerDetailView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\CustomerDetailView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.EditOrderItemsDialog" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="48" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\EditOrderItemsDialog.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.NavigationView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="49.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\NavigationView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.OrderDetailView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="42.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\OrderDetailView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.ProductDetailView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="49.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ProductDetailView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.ProductTypeDetailView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ProductTypeDetailView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.ProviderDetailView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="46.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ProviderDetailView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.RoofCalculatorDetailView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\RoofCalculatorDetailView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.StocksStatisticDetailView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="48" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\StocksStatisticDetailView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.Services.MessageDialogService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="48" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>View\Services\MessageDialogService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.ShellTypes.ExclusiveShell" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="49.75" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ShellTypes\ExclusiveShell.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.ShellTypes.HorizontalShellView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="51.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ShellTypes\HorizontalShellView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.ShellTypes.VerticalShell" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="51.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ShellTypes\VerticalShell.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.SlopeTypes.ParallelogramSlopeView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="42.75" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\SlopeTypes\ParallelogramSlopeView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.SlopeTypes.RectangularSlopeView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="51.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\SlopeTypes\RectangularSlopeView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.SlopeTypes.TrapezoidalSlopeView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="49.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\SlopeTypes\TrapezoidalSlopeView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.SlopeTypes.TriangularSlopeView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="41" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\SlopeTypes\TriangularSlopeView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.UmbrellaTypes.EconomUmbrellaView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="44.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UmbrellaTypes\EconomUmbrellaView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.UmbrellaTypes.PremiumUmbrellaView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="46.25" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UmbrellaTypes\PremiumUmbrellaView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.View.UmbrellaTypes.StandartUmbrellaView" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="48" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\UmbrellaTypes\StandartUmbrellaView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.ChimneyCalculatingDetailViewModel" Collapsed="true">
+    <Position X="50.75" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CAqEBgAgAAkjAIAZOFCCaEAAkA0AAACIBIA4AoAAAAA=</HashCode>
+      <FileName>ViewModel\ChimneyCalculatingDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.CustomerDetailViewModel" Collapsed="true">
+    <Position X="48.25" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAkAAAAkEAABAIAAAAAAAAAAAAECAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ViewModel\CustomerDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.DetailViewModelBase" Collapsed="true">
+    <Position X="49.75" Y="1.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAkCAAA5AIABEEEAAABAAAAAAAEQAAAAAAAAAAEEAIA=</HashCode>
+      <FileName>ViewModel\DetailViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.MainViewModel" Collapsed="true">
+    <Position X="48" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIACIKiQgFADIgAFAAEAAAAAAAIAAAEAAIAEAAAAAA=</HashCode>
+      <FileName>ViewModel\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.NavigationItemViewModel" Collapsed="true">
+    <Position X="43.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACCAACAAAAAAAAAAAAAACAAAAAAAAAAAAAQAACAAA=</HashCode>
+      <FileName>ViewModel\NavigationItemViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.NavigationViewModel" Collapsed="true">
+    <Position X="45.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAiAAAEAEABEAAABAgAAAAAAAAAAAIAAAAAAAQ=</HashCode>
+      <FileName>ViewModel\NavigationViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.OrderDetailViewModel" Collapsed="true">
+    <Position X="48.25" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAsEwAA2AAEDIAIAEAAAAAggIAWlECMAAABAABgSDgI=</HashCode>
+      <FileName>ViewModel\OrderDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.OrderStateDetailViewModel" Collapsed="true">
+    <Position X="48.25" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAgAAABAAIAAAAAAAAAAAEAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>ViewModel\OrderStateDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.ProductDetailViewModel" Collapsed="true">
+    <Position X="50.75" Y="3" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAE0IAAFAgQACAEIAQAACAEEAAAAAIAYAAAEAAI=</HashCode>
+      <FileName>ViewModel\ProductDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.ProductTypeDetailViewModel" Collapsed="true">
+    <Position X="50.75" Y="5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgAAABwAAhBBAACAEAAAgAAAIEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ProductTypeDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.ProviderDetailViewModel" Collapsed="true">
+    <Position X="50.75" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgCQAAkAAAFAAAAAAAAAAAAAAEAACAAAAAAEAAAAAQ=</HashCode>
+      <FileName>ViewModel\ProviderDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.RoofCalculatorDetailViewModel" Collapsed="true">
+    <Position X="50.75" Y="7" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAiIBAAgAAgBBAASAEEAAgAAIIEAAAAAAAAAAkAAAEA=</HashCode>
+      <FileName>ViewModel\RoofCalculatorDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.StocksStatisticDetailViewModel" Collapsed="true">
+    <Position X="48.25" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgCAABwMAhBAAAAAIAAAAAgAAkAAAAAAIAAIAAAAAQ=</HashCode>
+      <FileName>ViewModel\StocksStatisticDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.ViewModelBase" Collapsed="true">
+    <Position X="46.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.ShellTypesViewModel.ExclusiveShellViewModel" Collapsed="true">
+    <Position X="51.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ShellTypesViewModel\ExclusiveShellViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.ShellTypesViewModel.HorizontalShellViewModel" Collapsed="true">
+    <Position X="41" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ShellTypesViewModel\HorizontalShellViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.ShellTypesViewModel.VerticalShellViewModel" Collapsed="true">
+    <Position X="41" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ShellTypesViewModel\VerticalShellViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.SlopeTypesViewModel.ParallelogramSlopeViewModel" Collapsed="true">
+    <Position X="44.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\SlopeTypesViewModel\ParallelogramSlopeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.SlopeTypesViewModel.RectangularSlopeViewModel" Collapsed="true">
+    <Position X="41" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\SlopeTypesViewModel\RectangularSlopeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.SlopeTypesViewModel.TrapezoidalSlopeViewModel" Collapsed="true">
+    <Position X="51.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\SlopeTypesViewModel\TrapezoidalSlopeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.SlopeTypesViewModel.TriangularSlopeViewModel" Collapsed="true">
+    <Position X="42.75" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\SlopeTypesViewModel\TriangularSlopeViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.UmbrellaTypesViewModel.EconomUmbrellaViewModel" Collapsed="true">
+    <Position X="46.25" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\UmbrellaTypesViewModel\EconomUmbrellaViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.UmbrellaTypesViewModel.PremiumUmbrellaViewModel" Collapsed="true">
+    <Position X="48" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\UmbrellaTypesViewModel\PremiumUmbrellaViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.ViewModel.UmbrellaTypesViewModel.StandartUmbrellaViewModel" Collapsed="true">
+    <Position X="49.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\UmbrellaTypesViewModel\StandartUmbrellaViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.CustomerWrapper" Collapsed="true">
+    <Position X="42.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAAAAAAQAAAEAAAACAAAAIEAAAAA=</HashCode>
+      <FileName>Wrapper\CustomerWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.ModelWrapper&lt;T&gt;" Collapsed="true">
+    <Position X="43.5" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAAAAAAAAAAASEABAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Wrapper\ModelWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.NotifyDataErrorInfoBase" Collapsed="true">
+    <Position X="41.25" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAIABAAAAAhoAA=</HashCode>
+      <FileName>Wrapper\NotifyDataErrorInfoBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.OrderItemWrapper" Collapsed="true">
+    <Position X="44.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAECAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Wrapper\OrderItemWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.OrderStateWrapper" Collapsed="true">
+    <Position X="44.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Wrapper\OrderStateWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.OrderWrapper" Collapsed="true">
+    <Position X="46.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAIAQAAQAAAAAAAAAAAAAAAAABAAAAAAAACAAAA=</HashCode>
+      <FileName>Wrapper\OrderWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.PipeAbutmentWrapper" Collapsed="true">
+    <Position X="44.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAEAQAAAAAAAAAAAAAAACCJAAAAAAACAAAA=</HashCode>
+      <FileName>Wrapper\PipeAbutmentWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.PipeShellWrapper" Collapsed="true">
+    <Position X="46.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCEAQABEAAAABEAAAAAkAAAEEAQABgCAIIBASAEAAA=</HashCode>
+      <FileName>Wrapper\PipeShellWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.PipeUmbrellaWrapper" Collapsed="true">
+    <Position X="44.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kBAAAAAAABAQgKgAhABAQAAAkgQQEAAEgAAAAgCQAIA=</HashCode>
+      <FileName>Wrapper\PipeUmbrellaWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.PipeWrapper" Collapsed="true">
+    <Position X="42.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAIIAAAAAhAAAAAIAAAEABAAggBAAAhAAAAA=</HashCode>
+      <FileName>Wrapper\PipeWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.ProductDiscountWrapper" Collapsed="true">
+    <Position X="41" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Wrapper\ProductDiscountWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.ProductMeasureWrapper" Collapsed="true">
+    <Position X="41" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Wrapper\ProductMeasureWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.ProductTypeWrapper" Collapsed="true">
+    <Position X="46.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Wrapper\ProductTypeWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.ProductWrapper" Collapsed="true">
+    <Position X="41" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQAQAAAAAABAAAAEQACAAAAAAgAAACAEAAIAA=</HashCode>
+      <FileName>Wrapper\ProductWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.ProviderWrapper" Collapsed="true">
+    <Position X="42.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAAAAAAQAAAAAAAACAAAAIEAAAAA=</HashCode>
+      <FileName>Wrapper\ProviderWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.UI.Wrapper.SlopeWrapper" Collapsed="true">
+    <Position X="46.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAiAACAAAABAAAAAAAAAAAAAACAABAAABAAAAAKAAA=</HashCode>
+      <FileName>Wrapper\SlopeWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.Customer" Collapsed="true">
+    <Position X="33" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.Order" Collapsed="true">
+    <Position X="34.75" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.OrderItem" Collapsed="true">
+    <Position X="36.5" Y="1" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.OrderState" Collapsed="true">
+    <Position X="34.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.Pipe" Collapsed="true">
+    <Position X="33" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.PipeAbutment" Collapsed="true">
+    <Position X="34.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.PipeShell" Collapsed="true">
+    <Position X="36.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.PipeUmbrella" Collapsed="true">
+    <Position X="33" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.Product" Collapsed="true">
+    <Position X="33" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.ProductDiscount" Collapsed="true">
+    <Position X="34.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.ProductMeasure" Collapsed="true">
+    <Position X="36.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.ProductType" Collapsed="true">
+    <Position X="36.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.Provider" Collapsed="true">
+    <Position X="33" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.Entities.Slope" Collapsed="true">
+    <Position X="34.75" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.LookupItem" Collapsed="true">
+    <Position X="38.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.NullLookupItem" Collapsed="true">
+    <Position X="38.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.LookupItemExtended" Collapsed="true">
+    <Position X="38.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="RoofsSeller.Model.PicClass" Collapsed="true">
+    <Position X="36.5" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="RoofsSeller.UI.Data.Lookups.ICustomerLookupDataService" Collapsed="true">
+    <Position X="41" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Lookups\ICustomerLookupDataService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Lookups.IOrderStateLookupDataService" Collapsed="true">
+    <Position X="48" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Lookups\IOrderStateLookupDataService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Lookups.IProductDiscountLookupDataService" Collapsed="true">
+    <Position X="44.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Lookups\IProductDiscountLookupDataService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Lookups.IProductLookupDataService" Collapsed="true">
+    <Position X="46.25" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAgAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Data\Lookups\IProductLookupDataService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Lookups.IProductMeasureLookupDataService" Collapsed="true">
+    <Position X="49.75" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Lookups\IProductMeasureLookupDataService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Lookups.IProductTypeLookupDataService" Collapsed="true">
+    <Position X="51.5" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Lookups\IProductTypeLookupDataService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Lookups.IProviderLookupDataService" Collapsed="true">
+    <Position X="42.75" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Lookups\IProviderLookupDataService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.IOrderLookupDataService" Collapsed="true">
+    <Position X="46.25" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Lookups\IOrderLookupDataService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Repositories.ICustomerRepository" Collapsed="true">
+    <Position X="35.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAQAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\ICustomerRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Repositories.IGenericRepository&lt;T&gt;" Collapsed="true">
+    <Position X="36.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAMAAAAAAAAAAEAAAAAABAAAAIAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Data\Repositories\IGenericRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Repositories.IOrderRepository" Collapsed="true">
+    <Position X="35.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAgAAAAAAAEAAAAAAAAAACAAAAAEAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\IOrderRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Repositories.IOrderStateRepository" Collapsed="true">
+    <Position X="37.75" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\IOrderStateRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Repositories.IProductRepository" Collapsed="true">
+    <Position X="37.75" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAEAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\IProductRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Repositories.IProductTypeRepository" Collapsed="true">
+    <Position X="35.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\IProductTypeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.Data.Repositories.IProviderRepository" Collapsed="true">
+    <Position X="37.75" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Repositories\IProviderRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.View.Services.IMessageDialogService" Collapsed="true">
+    <Position X="42.75" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>View\Services\IMessageDialogService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.ViewModel.ICustomerDetailViewModel" Collapsed="true">
+    <Position X="32" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\ICustomerDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.ViewModel.IDetailViewModel" Collapsed="true">
+    <Position X="33" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\IDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.ViewModel.INavigationViewModel" Collapsed="true">
+    <Position X="44.5" Y="18.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\INavigationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.ViewModel.IOrderDetailViewModel" Collapsed="true">
+    <Position X="32" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\IOrderDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.ViewModel.IProductDetailViewModel" Collapsed="true">
+    <Position X="34" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\IProductDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="RoofsSeller.UI.ViewModel.IProviderDetailViewModel" Collapsed="true">
+    <Position X="34" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\IProviderDetailViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="RoofsSeller.UI.View.Services.MessageDialogResult" Collapsed="true">
+    <Position X="41" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>View\Services\MessageDialogService.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
