@@ -26,21 +26,21 @@ namespace RoofsSeller.UI.Wrapper
             set { SetValue(value); }
         }
 
-        public int SideA
+        public double SideA
         {
-            get { return GetValue<int>(); }
+            get { return GetValue<double>(); }
             set { SetValue(value); }
         }
 
-        public int SideB
+        public double SideB
         {
-            get { return GetValue<int>(); }
+            get { return GetValue<double>(); }
             set { SetValue(value); }
         }
 
-        public int SlopeHeight
+        public double SlopeHeight
         {
-            get { return GetValue<int>(); }
+            get { return GetValue<double>(); }
             set { SetValue(value); }
         }
 

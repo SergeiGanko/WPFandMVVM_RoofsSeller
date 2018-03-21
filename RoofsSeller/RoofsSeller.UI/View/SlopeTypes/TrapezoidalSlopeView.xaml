@@ -14,13 +14,13 @@
         <StackPanel Orientation="Vertical" Margin="5">
             <Label Content="Сторона а, м"></Label>
             <TextBox HorizontalContentAlignment="Right" 
-                     Text="{Binding SlopeWrapper.SideA, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                     Text="{Binding SlopeWrapper.SideA, StringFormat={}{0:0.00}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <Label Content="Сторона b, м"></Label>
             <TextBox HorizontalContentAlignment="Right" 
-                     Text="{Binding SlopeWrapper.SideB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                     Text="{Binding SlopeWrapper.SideB, StringFormat={}{0:0.00}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <Label Content="Высота h, м"></Label>
             <TextBox HorizontalContentAlignment="Right" 
-                     Text="{Binding SlopeWrapper.SlopeHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                     Text="{Binding SlopeWrapper.SlopeHeight, StringFormat={}{0:0.00}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
 
         <Canvas Grid.Column="1" Margin="5">

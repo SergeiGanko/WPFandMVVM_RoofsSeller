@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="RoofsSeller.UI.View.Abutment.AbutmentUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RoofsSeller.UI.View.Abutment"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="400">
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="HorizontalContentAlignment" Value="Right"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <GroupBox Header="Оклад" Padding="3" Margin="5">
+            <StackPanel>
+                <Label Content="Размер боковин, мм (шир. X выс.)"/>
+                <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
+                    <TextBox Width="70" IsReadOnly="True"
+                             Text="{Binding PipeAbutment.SideWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Content="X"></Label>
+                    <TextBox Width="70" IsReadOnly="True"
+                             Text="{Binding PipeAbutment.SideLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+                <Label Content="Размер фронт. части, мм (шир. X выс.)"/>
+                <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
+                    <TextBox Width="70" IsReadOnly="True"
+                             Text="{Binding PipeAbutment.FrontWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Content="X"></Label>
+                    <TextBox Width="70" IsReadOnly="True"
+                             Text="{Binding PipeAbutment.FrontLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+                <Label Content="Размер тыльной части, мм (шир. X выс.)"/>
+                <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
+                    <TextBox Width="70" IsReadOnly="True"
+                             Text="{Binding PipeAbutment.BackWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Label Content="X"></Label>
+                    <TextBox Width="70" IsReadOnly="True"
+                             Text="{Binding PipeAbutment.BackLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </StackPanel>
+                <Label Content="Стоимость оклада"/>
+                <TextBox Width="70" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0"
+                         Text="{Binding PipeAbutment.AbutmentCost, StringFormat={}{0:C}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            </StackPanel>
+
+        </GroupBox>
+    </Grid>
+</UserControl>

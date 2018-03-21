@@ -41,9 +41,10 @@
                           DisplayMemberPath="DisplayMember"
                           SelectedValuePath="Cost"
                           SelectedValue="{Binding Slope.ModuleCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Content="Полезная площадь модуля, м.кв" Margin="10 10 10 0"></Label>
+                <Label Content="Полезная площадь модуля" Margin="10 10 10 0"></Label>
                 <ComboBox ItemsSource="{Binding ModuleEffectiveSquares}" Margin="10 0 10 0"
-                          SelectedValue="{Binding Slope.ModuleEffectiveSquare, StringFormat=N2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                          ItemStringFormat="{}{0:0.000 'м.кв'}"
+                          SelectedValue="{Binding Slope.ModuleEffectiveSquare, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 </ComboBox>
 
                 <Label Content="Форма ската" Margin="10 10 10 0"></Label>
@@ -51,7 +52,7 @@
                     <ComboBox ItemsSource="{Binding SlopeTypes}" Width="250" Margin="10 0 0 0"
                               SelectedValue="{Binding Slope.SlopeType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                     </ComboBox>
-                    <Button Content="Далее" Margin="10 0 0 0"   
+                    <Button Content="Далее" Margin="10 0 0 0" Width="80"   
                             Command="{Binding NextCommand}"></Button>
                 </StackPanel>
             </StackPanel>
@@ -84,7 +85,7 @@
                         <DataGridTextColumn Header="   Форма ската" Width="155"
                                         Binding="{Binding SlopeType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <DataGridTextColumn Header="     Площадь" Width="155"
-                                        Binding="{Binding SlopeSquare, StringFormat={}{0:0 'м.кв.'}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                        Binding="{Binding SlopeSquare, StringFormat={}{0:0.00 'м.кв.'}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="HorizontalAlignment" Value="Center"></Setter>
@@ -129,7 +130,7 @@
                 <Separator Margin="10 0 10 0"></Separator>
                 <StackPanel Orientation="Horizontal">
                     <Label Content="Итого:" FontSize="16" Margin="10 0 10 0"></Label>
-                    <TextBox Text="{Binding CurrentRoof.RoofSquare, StringFormat={}{0:0 'м.кв.'}, UpdateSourceTrigger=PropertyChanged}"
+                    <TextBox Text="{Binding CurrentRoof.RoofSquare, StringFormat={}{0:0.00 'м.кв.'}, UpdateSourceTrigger=PropertyChanged}"
                              Width="155" Margin="87 0 0 10" BorderThickness="0" IsReadOnly="True"
                              HorizontalContentAlignment="Center"></TextBox>
                     <TextBox Text="{Binding CurrentRoof.TotalQuantity, StringFormat={}{0:0 'шт.'}, UpdateSourceTrigger=PropertyChanged}"

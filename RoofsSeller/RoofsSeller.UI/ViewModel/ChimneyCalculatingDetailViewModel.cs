@@ -15,6 +15,8 @@ using RoofsSeller.UI.Wrapper;
 
 namespace RoofsSeller.UI.ViewModel
 {
+    using RoofsSeller.UI.ViewModel.Abutment;
+
     internal sealed class ChimneyCalculatingDetailViewModel : DetailViewModelBase
     {
         private readonly IProductLookupDataService _productLookupDataService;
@@ -251,8 +253,21 @@ namespace RoofsSeller.UI.ViewModel
 
         #region PipeAbutment Members
 
+        private object _selectedAbutmentViewModel;
+
+        public object SelectedAbutmentViewModel
+        {
+            get { return _selectedAbutmentViewModel; }
+            set
+            {
+                _selectedAbutmentViewModel = value;
+                OnPropertyChanged();
+            }
+        }
+
         private void AbutmentCalculate(double d, int a)
         {
+            SelectedAbutmentViewModel = new AbutmentViewModel(PipeAbutment);
             SidePartSizeCalculate(d);
             FrontPartSizeCalculate(a);
             BackPartSizeCalculate(a);

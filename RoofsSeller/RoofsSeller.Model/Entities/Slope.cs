@@ -6,9 +6,9 @@ namespace RoofsSeller.Model.Entities
     {
         public string SlopeType { get; set; }
         public BitmapImage SlopeImage { get; set; }
-        public int SideA { get; set; }
-        public int SideB { get; set; }
-        public int SlopeHeight { get; set; }
+        public double SideA { get; set; }
+        public double SideB { get; set; }
+        public double SlopeHeight { get; set; }
         public double SlopeSquare { get; set; }
         public decimal ModuleCost { get; set; }
         public double ModuleEffectiveSquare { get; set; }

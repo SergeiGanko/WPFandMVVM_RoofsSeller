@@ -14,6 +14,7 @@ using RoofsSeller.UI.Wrapper;
 namespace RoofsSeller.UI.ViewModel
 {
     using System.ComponentModel;
+    using System.Threading;
 
     using RoofsSeller.UI.ViewModel.SlopeTypesViewModel;
 
@@ -170,6 +171,10 @@ namespace RoofsSeller.UI.ViewModel
                     SelectedViewModel = new ParallelogramSlopeViewModel(Slope);
                     break;
             }
+
+            Slope.SideA = 0;
+            Slope.SideB = 0;
+            Slope.SlopeHeight = 0;
         }
         
         private void OnAddExecute()

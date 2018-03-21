@@ -175,6 +175,7 @@
     <Compile Include="Infrastructure\DataGridBehavior.cs" />
     <Compile Include="Infrastructure\ImageSourceConverter.cs" />
     <Compile Include="Startup\Bootstrapper.cs" />
+    <Compile Include="ViewModel\Abutment\AbutmentViewModel.cs" />
     <Compile Include="ViewModel\ChimneyCalculatingDetailViewModel.cs" />
     <Compile Include="ViewModel\CustomerDetailViewModel.cs" />
     <Compile Include="ViewModel\DetailViewModelBase.cs" />
@@ -205,6 +206,9 @@
     <Compile Include="ViewModel\UmbrellaTypesViewModel\PremiumUmbrellaViewModel.cs" />
     <Compile Include="ViewModel\UmbrellaTypesViewModel\StandartUmbrellaViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\Abutment\AbutmentUC.xaml.cs">
+      <DependentUpon>AbutmentUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ChimneyCalculatingDetailView.xaml.cs">
       <DependentUpon>ChimneyCalculatingDetailView.xaml</DependentUpon>
     </Compile>
@@ -296,6 +300,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\Abutment\AbutmentUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ChimneyCalculatingDetailView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
