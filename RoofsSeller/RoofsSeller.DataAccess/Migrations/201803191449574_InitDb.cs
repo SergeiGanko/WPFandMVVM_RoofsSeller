@@ -3,7 +3,7 @@ namespace RoofsSeller.DataAccess.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialDb : DbMigration
+    public partial class InitDb : DbMigration
     {
         public override void Up()
         {

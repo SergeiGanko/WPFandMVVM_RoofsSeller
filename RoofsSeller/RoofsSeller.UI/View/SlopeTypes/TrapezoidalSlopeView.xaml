@@ -12,16 +12,19 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical" Margin="5">
-            <Label Content="Сторона а"></Label>
-            <TextBox></TextBox>
-            <Label Content="Сторона b"></Label>
-            <TextBox></TextBox>
-            <Label Content="Высота h"></Label>
-            <TextBox></TextBox>
+            <Label Content="Сторона а, м"></Label>
+            <TextBox HorizontalContentAlignment="Right" 
+                     Text="{Binding SlopeWrapper.SideA, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label Content="Сторона b, м"></Label>
+            <TextBox HorizontalContentAlignment="Right" 
+                     Text="{Binding SlopeWrapper.SideB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label Content="Высота h, м"></Label>
+            <TextBox HorizontalContentAlignment="Right" 
+                     Text="{Binding SlopeWrapper.SlopeHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
 
         <Canvas Grid.Column="1" Margin="5">
-            <Label Content="a" Canvas.Top="5" Canvas.Left="100"></Label>
+            <Label Content="a" Canvas.Top="0" Canvas.Left="100"></Label>
             <Label Content="b" Canvas.Top="110" Canvas.Left="100"></Label>
             <Label Content="h" Canvas.Top="60" Canvas.Left="85"></Label>
             <Polygon Canvas.Left="20" Canvas.Top="110"

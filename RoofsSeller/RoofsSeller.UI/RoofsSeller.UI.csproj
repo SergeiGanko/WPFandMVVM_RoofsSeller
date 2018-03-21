@@ -282,6 +282,7 @@
     <Compile Include="Wrapper\ProductTypeWrapper.cs" />
     <Compile Include="Wrapper\ProductWrapper.cs" />
     <Compile Include="Wrapper\ProviderWrapper.cs" />
+    <Compile Include="Wrapper\RoofWrapper.cs" />
     <Compile Include="Wrapper\SlopeWrapper.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

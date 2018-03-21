@@ -55,6 +55,7 @@
     <Compile Include="Entities\Provider.cs" />
     <Compile Include="Entities\PipeShell.cs" />
     <Compile Include="Entities\PipeUmbrella.cs" />
+    <Compile Include="Entities\Roof.cs" />
     <Compile Include="Entities\Slope.cs" />
     <Compile Include="LookupItem.cs" />
     <Compile Include="PicClass.cs" />

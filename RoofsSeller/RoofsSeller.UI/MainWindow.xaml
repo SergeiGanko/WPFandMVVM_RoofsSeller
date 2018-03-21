@@ -79,8 +79,8 @@
             <MenuItem Header="Сервис">
                 <MenuItem Header="Калькулятор вентканала" Command="{Binding OpenSingleDetailViewCommand}"
                           CommandParameter="{x:Type viewModel:ChimneyCalculatingDetailViewModel}"/>
-                <!--<MenuItem Header="Калькулятор металлочерепицы" Command="{Binding OpenSingleDetailViewCommand}"
-                          CommandParameter="{x:Type viewModel:RoofCalculatorDetailViewModel}"/>-->
+                <MenuItem Header="Калькулятор металлочерепицы" Command="{Binding OpenSingleDetailViewCommand}"
+                          CommandParameter="{x:Type viewModel:RoofCalculatorDetailViewModel}"/>
             </MenuItem>
         </Menu>
 <!-- ******* NavigationView UC ******* -->

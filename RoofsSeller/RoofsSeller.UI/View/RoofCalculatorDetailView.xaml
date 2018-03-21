@@ -6,7 +6,7 @@
              xmlns:views="clr-namespace:RoofsSeller.UI.View.SlopeTypes"
              xmlns:viewmodels="clr-namespace:RoofsSeller.UI.ViewModel.SlopeTypesViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="700">
+             d:DesignHeight="500" d:DesignWidth="1000">
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type viewmodels:RectangularSlopeViewModel}">
             <views:RectangularSlopeView></views:RectangularSlopeView>
@@ -24,77 +24,124 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1.5*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Vertical" Margin="5">
-                <Label Content="Модульная металлочерепица"></Label>
-                <ComboBox ItemsSource="{Binding Roofing}"
+            <StackPanel Orientation="Vertical">
+                <Label Content="Модульная металлочерепица" Margin="10 10 10 0"></Label>
+                <ComboBox ItemsSource="{Binding Roofing}" Margin="10 0 10 0"
                           DisplayMemberPath="DisplayMember"
                           SelectedValuePath="Cost"
                           SelectedValue="{Binding Slope.ModuleCost, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Content="Полезная площадь модуля, м.кв"></Label>
-                <TextBox Text="{Binding Slope.ModuleEffectiveSquare}"></TextBox>
-                <Label Content="Вид ската"></Label>
-                <ComboBox ItemsSource="{Binding SlopeTypes}"
-                          SelectedValuePath="Name"
-                          SelectedValue="{Binding Slope.SlopeType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                          SelectedIndex="0">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <Image  Source="{Binding PicImage}" Width="150" Height="80"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
+                <Label Content="Полезная площадь модуля, м.кв" Margin="10 10 10 0"></Label>
+                <ComboBox ItemsSource="{Binding ModuleEffectiveSquares}" Margin="10 0 10 0"
+                          SelectedValue="{Binding Slope.ModuleEffectiveSquare, StringFormat=N2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 </ComboBox>
+
+                <Label Content="Форма ската" Margin="10 10 10 0"></Label>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox ItemsSource="{Binding SlopeTypes}" Width="250" Margin="10 0 0 0"
+                              SelectedValue="{Binding Slope.SlopeType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    </ComboBox>
+                    <Button Content="Далее" Margin="10 0 0 0"   
+                            Command="{Binding NextCommand}"></Button>
+                </StackPanel>
             </StackPanel>
 
-            <ContentPresenter Grid.Row="0" Grid.Column="1"
+            <ContentPresenter Grid.Row="0" Grid.Column="1" Margin="15 15 0 0"
                               Content="{Binding SelectedViewModel}"/>
         </Grid>
 
         <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
             <StackPanel Orientation="Vertical">
-                <Label Content="Калькуляция кровли"></Label>
-                <DataGrid AutoGenerateColumns="False">
+                <Label Content="Калькуляция кровли" Margin="10 10 10 0"></Label>
+                <DataGrid ItemsSource="{Binding Slopes}" Margin="10 0 10 0"
+                          SelectedItem="{Binding SelectedSlope, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          AutoGenerateColumns="False" FontSize="16" CanUserAddRows="False"
+                          GridLinesVisibility="Vertical" CanUserReorderColumns="False" CanUserResizeColumns="False"
+                          CanUserResizeRows="False"
+                          FrozenColumnCount="1" IsReadOnly="True">
+                    
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Вид ската" Width="Auto"
-                                        ElementStyle="{StaticResource DataGridColumnStyle}"
-                                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
-                                        Binding="{Binding Product.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridTextColumn Header="Площадь ската" Width="Auto"
-                                        ElementStyle="{StaticResource DataGridColumnStyle}"
-                                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
-                                        Binding="{Binding Product.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridTextColumn Header="Цена модуля" Width="Auto"
-                                        ElementStyle="{StaticResource DataGridColumnStyle}"
-                                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
-                                        Binding="{Binding Product.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridTextColumn Header="Кол-во модулей" Width="Auto"
-                                        ElementStyle="{StaticResource DataGridColumnStyle}"
-                                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
-                                        Binding="{Binding Product.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DataGridTextColumn Header="Сумма" Width="Auto"
-                                        ElementStyle="{StaticResource DataGridColumnStyle}"
-                                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
-                                        Binding="{Binding Product.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="   Форма ската" Width="155"
+                                        Binding="{Binding SlopeType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <DataGridTextColumn Header="     Площадь" Width="155"
+                                        Binding="{Binding SlopeSquare, StringFormat={}{0:0 'м.кв.'}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header=" Цена модуля" Width="140"
+                                        Binding="{Binding ModuleCost, StringFormat={}{0:C}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header=" Количество" Width="140"
+                                        Binding="{Binding ModuleQuantity, StringFormat={}{0:0 'шт.'}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Header="     Сумма" Width="125"
+                                        Binding="{Binding Summ, StringFormat={}{0:C}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
+                
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Margin="5">
+            <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Margin="10 35 0 0">
                 <Button Content="Добавить" Command="{Binding AddCommand}" Margin="5" Width="100"/>
                 <Button Content="Удалить" Command="{Binding RemoveCommand}" Margin="5" Width="100"/>
             </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
+                <Separator Margin="10 0 10 0"></Separator>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Итого:" FontSize="16" Margin="10 0 10 0"></Label>
+                    <TextBox Text="{Binding CurrentRoof.RoofSquare, StringFormat={}{0:0 'м.кв.'}, UpdateSourceTrigger=PropertyChanged}"
+                             Width="155" Margin="87 0 0 10" BorderThickness="0" IsReadOnly="True"
+                             HorizontalContentAlignment="Center"></TextBox>
+                    <TextBox Text="{Binding CurrentRoof.TotalQuantity, StringFormat={}{0:0 'шт.'}, UpdateSourceTrigger=PropertyChanged}"
+                             Width="140" Margin="140 0 0 10" BorderThickness="0" IsReadOnly="True"
+                             HorizontalContentAlignment="Center"></TextBox>
+                    <TextBox Text="{Binding CurrentRoof.TotalSum, StringFormat={}{0:C}, UpdateSourceTrigger=PropertyChanged}"
+                             Width="125" Margin="0 0 0 10" BorderThickness="0" IsReadOnly="True" 
+                             HorizontalContentAlignment="Center"></TextBox>
+                </StackPanel>
+            </StackPanel>
         </Grid>
+        
+        
     </Grid>
 </UserControl>

@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RoofsSeller.UI.Wrapper;
 
 namespace RoofsSeller.UI.ViewModel.SlopeTypesViewModel
 {
     public class TrapezoidalSlopeViewModel
     {
+        public TrapezoidalSlopeViewModel(SlopeWrapper slope)
+        {
+            SlopeWrapper = slope;
+        }
+
+        public SlopeWrapper SlopeWrapper { get; set; }
     }
 }

@@ -13,10 +13,16 @@ using RoofsSeller.UI.Wrapper;
 
 namespace RoofsSeller.UI.ViewModel
 {
+    using System.ComponentModel;
+
+    using RoofsSeller.UI.ViewModel.SlopeTypesViewModel;
+
     public class RoofCalculatorDetailViewModel : DetailViewModelBase
     {
         private readonly IProductLookupDataService _productLookupDataService;
         private SlopeWrapper _slope;
+        private SlopeWrapper _selectedSlope;
+        private RoofWrapper _currentRoof;
 
         public RoofCalculatorDetailViewModel(IEventAggregator eventAggregator,
             IProductLookupDataService productLookupDataService,
@@ -25,41 +31,55 @@ namespace RoofsSeller.UI.ViewModel
         {
             _productLookupDataService = productLookupDataService;
 
-            Title = "Калькулятор";
+            Title = "Калькулятор кровли";
 
             Roofing = new ObservableCollection<LookupItem>();
 
-            SlopeTypes = new ObservableCollection<PicClass>
-            {
-                new PicClass
-                {
-                    PicImage = new BitmapImage(new Uri("pack://application:,,,/Images/rectangle.PNG")),
-                    Name = "Прямоугольник"
-                },
-                new PicClass
-                {
-                    PicImage = new BitmapImage(new Uri("pack://application:,,,/Images/triangle.PNG")),
-                    Name = "Треугольник"
-                },
-                new PicClass
-                {
-                    PicImage = new BitmapImage(new Uri("pack://application:,,,/Images/trapez.PNG")),
-                    Name = "Трапеция"
-                },
-                new PicClass
-                {
-                    PicImage = new BitmapImage(new Uri("pack://application:,,,/Images/parallel.PNG")),
-                    Name = "Параллелограмм"
-                }
-            };
+            SlopeTypes = new ObservableCollection<string> { "Прямоугольник", "Треугольник", "Трапеция", "Параллелограмм"};
 
+            ModuleEffectiveSquares = new ObservableCollection<double> { 0.770, 0.805, 0.910 };
+
+            Slopes = new ObservableCollection<SlopeWrapper>();
+
+            NextCommand = new DelegateCommand(OnNextExecute);
             AddCommand = new DelegateCommand(OnAddExecute);
             RemoveCommand = new DelegateCommand(OnRemoveExecute, OnRemoveCanExecute);
         }
 
         public ObservableCollection<LookupItem> Roofing { get; }
 
-        public ObservableCollection<PicClass> SlopeTypes { get; }
+        public ObservableCollection<string> SlopeTypes { get; }
+
+        public ObservableCollection<double> ModuleEffectiveSquares { get; }
+
+        public ObservableCollection<SlopeWrapper> Slopes { get; }
+
+        public RoofWrapper CurrentRoof
+        {
+            get
+            {
+                return _currentRoof;
+            }
+            set
+            {
+                _currentRoof = value;
+                this.OnPropertyChanged();
+            }
+        }
+
+        public SlopeWrapper SelectedSlope
+        {
+            get
+            {
+                return this._selectedSlope;
+            }
+            set
+            {
+                this._selectedSlope = value;
+                this.OnPropertyChanged();
+                ((DelegateCommand)RemoveCommand).RaiseCanExecuteChanged();
+            }
+        }
 
         public SlopeWrapper Slope
         {
@@ -71,13 +91,14 @@ namespace RoofsSeller.UI.ViewModel
             }
         }
 
+        public ICommand NextCommand { get; }
 
         public ICommand AddCommand { get; }
 
         public ICommand RemoveCommand { get; }
 
         private object _selectedViewModel;
-        
+
         public object SelectedViewModel
         {
             get { return _selectedViewModel; }
@@ -106,14 +127,25 @@ namespace RoofsSeller.UI.ViewModel
 
         private Slope CreateNewSlope()
         {
-            var slope = new Slope();
+            var slope = new Slope
+                            {
+                                SlopeType = "Прямоугольник",
+                                ModuleCost = 10.99M,
+                                ModuleEffectiveSquare = 0.77,
+                                SideA = 0,
+                                SideB = 0,
+                                SlopeHeight = 0
+                            };
+
+            var roof = new RoofWrapper(new Roof());
+            CurrentRoof = roof;
+
             return slope;
         }
 
         private async Task LoadProductLookupAsync()
         {
             Roofing.Clear();
-            //Metals.Add(new NullLookupItem { DisplayMember = " - " });
             var lookup = await _productLookupDataService.GetRoofingLookupAsync();
             foreach (var lookupItem in lookup)
             {
@@ -121,21 +153,87 @@ namespace RoofsSeller.UI.ViewModel
             }
         }
 
+        private void OnNextExecute()
+        {
+            switch (Slope.SlopeType)
+            {
+                case "Прямоугольник":
+                    SelectedViewModel = new RectangularSlopeViewModel(Slope);
+                    break;
+                case "Треугольник":
+                    SelectedViewModel = new TriangularSlopeViewModel(Slope);
+                    break;
+                case "Трапеция":
+                    SelectedViewModel = new TrapezoidalSlopeViewModel(Slope);
+                    break;
+                case "Параллелограмм":
+                    SelectedViewModel = new ParallelogramSlopeViewModel(Slope);
+                    break;
+            }
+        }
+        
+        private void OnAddExecute()
+        {
+            SlopeCalculate();
+            var wrapper = new SlopeWrapper(new Slope());
+            wrapper.SlopeType = Slope.SlopeType;
+            wrapper.SlopeSquare = Slope.SlopeSquare;
+            wrapper.ModuleCost = Slope.ModuleCost;
+            wrapper.ModuleQuantity = Slope.ModuleQuantity;
+            wrapper.Summ = Slope.Summ;
+
+            wrapper.PropertyChanged += Wrapper_PropertyChanged;
+            Slopes.Add(wrapper);
+
+            CurrentRoof.RoofSquare += Slope.SlopeSquare;
+            CurrentRoof.TotalQuantity += Slope.ModuleQuantity;
+            CurrentRoof.TotalSum += Slope.Summ;
+        }
+
+        private void Wrapper_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(SlopeWrapper.HasErrors))
+            {
+                ((DelegateCommand)SaveCommand).RaiseCanExecuteChanged();
+            }
+        }
+
+        private void SlopeCalculate()
+        {
+            double quantity = 0;
+            switch (Slope.SlopeType)
+            {
+                case "Прямоугольник":
+                    Slope.SlopeSquare = Slope.SideA * Slope.SideB;
+                    break;
+                case "Треугольник":
+                    Slope.SlopeSquare = (Slope.SideA * Slope.SlopeHeight) / 2.0;
+                    break;
+                case "Трапеция":
+                    Slope.SlopeSquare = Slope.SlopeHeight * (Slope.SideA + Slope.SideB) / 2.0;
+                    break;
+                case "Параллелограмм":
+                    Slope.SlopeSquare = Slope.SideA * Slope.SlopeHeight;
+                    break;
+            }
+
+            quantity = (Slope.SlopeSquare / Slope.ModuleEffectiveSquare) * 1.02;
+            Slope.ModuleQuantity = Convert.ToInt32(Math.Round(quantity));
+            Slope.Summ = Slope.ModuleCost * Slope.ModuleQuantity;
+        }
 
         private bool OnRemoveCanExecute()
         {
-            // ?????????? SelectedSlope at DataGrid
-            return SelectedViewModel != null;
+            return SelectedSlope != null;
         }
 
         private void OnRemoveExecute()
         {
-            throw new NotImplementedException();
-        }
-
-        private void OnAddExecute()
-        {
-            throw new NotImplementedException();
+            CurrentRoof.RoofSquare -= SelectedSlope.SlopeSquare;
+            CurrentRoof.TotalQuantity -= SelectedSlope.ModuleQuantity;
+            CurrentRoof.TotalSum -= SelectedSlope.Summ;
+            Slopes.Remove(SelectedSlope);
+            SelectedSlope = null;
         }
 
         protected override bool OnSaveCanExecute()

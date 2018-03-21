@@ -12,10 +12,12 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical" Margin="5">
-            <Label Content="Сторона а"></Label>
-            <TextBox Text="{Binding SideA, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-            <Label Content="Сторона b"></Label>
-            <TextBox Text="{Binding SideB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label Content="Сторона а, м"></Label>
+            <TextBox HorizontalContentAlignment="Right" 
+                Text="{Binding SlopeWrapper.SideA, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+            <Label Content="Сторона b, м"></Label>
+            <TextBox HorizontalContentAlignment="Right"  
+                Text="{Binding SlopeWrapper.SideB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
         </StackPanel>
         
         <Canvas Grid.Column="1" Margin="5">
@@ -24,7 +26,7 @@
             <Rectangle Stroke="AliceBlue" 
                        StrokeThickness="4" 
                        Height="80" Width="120"
-                       Margin="25 25 0 0"/>
+                       Margin="25 27 0 0"/>
         </Canvas>
     </Grid>
 </UserControl>

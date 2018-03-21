@@ -193,7 +193,7 @@ namespace RoofsSeller.DataAccess.Migrations
                                                Price=7.99m,
                                                StockBalance=746,
                                                ProductTypeId = 1,
-                                               Info = "Высота волны 35 мм,\nРазмер модуля 725мм*1196 мм,\nПолезный размер модуля 700мм*1150 мм,\nЭффективная площадь модуля 0,867 м.кв",
+                                               Info = "Высота волны 35 мм,\nРазмер модуля 725мм*1196 мм,\nПолезный размер модуля 700мм*1150 мм,\nЭффективная площадь модуля 0,805 м.кв",
                                                ProductDiscountId = 1
                                   },
                                   new Product{ Name="BUDMAT Rialto",
@@ -223,6 +223,14 @@ namespace RoofsSeller.DataAccess.Migrations
                                                Price=3.49m,
                                                StockBalance=780,
                                                ProductTypeId = 2,
+                                               ProductDiscountId = 1
+                                  },
+                                  new Product{ Name="BUDMAT Bella Sara",
+                                               ProductMeasureId = 1,
+                                               Price=10.99m,
+                                               StockBalance=1000,
+                                               ProductTypeId = 1,
+                                               Info = "Высота волны 35 мм,\nРазмер модуля 735мм*1180 мм,\nПолезный размер модуля 700мм*1100 мм,\nЭффективная площадь модуля 0,77 м.кв",
                                                ProductDiscountId = 1
                                   }
                               }

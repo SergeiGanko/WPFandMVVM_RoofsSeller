@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RoofsSeller.UI.ViewModel.SlopeTypesViewModel
+﻿namespace RoofsSeller.UI.ViewModel.SlopeTypesViewModel
 {
+    using RoofsSeller.UI.Wrapper;
+
     public class RectangularSlopeViewModel
     {
-        
+        public RectangularSlopeViewModel(SlopeWrapper slope)
+        {
+            SlopeWrapper = slope;
+        }
+
+        public SlopeWrapper SlopeWrapper { get; set; }
     }
 }
