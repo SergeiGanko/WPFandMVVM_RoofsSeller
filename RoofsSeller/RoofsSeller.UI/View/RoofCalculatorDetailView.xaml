@@ -24,10 +24,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -63,24 +61,24 @@
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"></RowDefinition>
+                
+                <RowDefinition Height="*"></RowDefinition>
                 <RowDefinition Height="Auto"></RowDefinition>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
                 <ColumnDefinition Width="Auto"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
+                
             </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Vertical">
-                <Label Content="Калькуляция кровли" Margin="10 10 10 0"></Label>
+            <DockPanel>
+                <Label DockPanel.Dock="Top" Content="Калькуляция кровли" Margin="10 10 10 0"></Label>
                 <DataGrid ItemsSource="{Binding Slopes}" Margin="10 0 10 0"
                           SelectedItem="{Binding SelectedSlope, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                           AutoGenerateColumns="False" FontSize="16" CanUserAddRows="False"
-                          GridLinesVisibility="Vertical" CanUserReorderColumns="False" CanUserResizeColumns="False"
-                          CanUserResizeRows="False"
+                          GridLinesVisibility="Vertical" CanUserReorderColumns="False" CanUserResizeRows="False"
+                          CanUserResizeColumns="False"
                           FrozenColumnCount="1" IsReadOnly="True">
-                    
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="   Форма ската" Width="155"
                                         Binding="{Binding SlopeType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -118,8 +116,8 @@
                         </DataGridTextColumn>
                     </DataGrid.Columns>
                 </DataGrid>
-                
-            </StackPanel>
+
+            </DockPanel>
 
             <StackPanel Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Margin="10 35 0 0">
                 <Button Content="Добавить" Command="{Binding AddCommand}" Margin="5" Width="100"/>
@@ -128,7 +126,7 @@
 
             <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical">
                 <Separator Margin="10 0 10 0"></Separator>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
                     <Label Content="Итого:" FontSize="16" Margin="10 0 10 0"></Label>
                     <TextBox Text="{Binding CurrentRoof.RoofSquare, StringFormat={}{0:0.00 'м.кв.'}, UpdateSourceTrigger=PropertyChanged}"
                              Width="155" Margin="87 0 0 10" BorderThickness="0" IsReadOnly="True"
@@ -142,7 +140,5 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-        
-        
     </Grid>
 </UserControl>
