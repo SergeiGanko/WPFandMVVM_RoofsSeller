@@ -76,7 +76,7 @@
                 <MenuItem Header="Остатки" Command="{Binding OpenSingleDetailViewCommand}"
                           CommandParameter="{x:Type viewModel:StocksStatisticDetailViewModel}"/>
             </MenuItem>
-            <MenuItem Header="Сервис">
+            <MenuItem Header="Расчет">
                 <MenuItem Header="Калькулятор вентканала" Command="{Binding OpenSingleDetailViewCommand}"
                           CommandParameter="{x:Type viewModel:ChimneyCalculatingDetailViewModel}"/>
                 <MenuItem Header="Калькулятор металлочерепицы" Command="{Binding OpenSingleDetailViewCommand}"

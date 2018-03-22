@@ -270,8 +270,7 @@ namespace RoofsSeller.UI.ViewModel
                 {
                     _productQuantityToAdd = SelectedAvailableProduct.StockBalance;
                     MessageDialogService.ShowInfoDialogAsync(
-                        $"Невозможно добавить заданное количество товара " +
-                        $"({_productQuantityToAdd} {SelectedAvailableProduct.ProductMeasure.Measure}) в заказ," +
+                        $"Невозможно добавить заданное количество товара в заказ," +
                         $" т.к. остаток товара на складе " +
                         $"{SelectedAvailableProduct.StockBalance} {SelectedAvailableProduct.ProductMeasure.Measure}");
                 }
