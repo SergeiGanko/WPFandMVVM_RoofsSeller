@@ -30,41 +30,41 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Label Content="Наименование" Margin="10 10 10 0"/>
+                <Label Content="Name" Margin="10 10 10 0"/>
                 <TextBox Grid.Row="1" Text="{Binding Product.Name,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-                <Label Grid.Row="2" Content="Тип продукта" Margin="10 0"/>
+                <Label Grid.Row="2" Content="Product Type" Margin="10 0"/>
                 <ComboBox Grid.Row="3" Margin="10 0 10 10"
                   ItemsSource="{Binding ProductTypes}"
                   DisplayMemberPath="DisplayMember"
                   SelectedValuePath="Id"
                   SelectedValue="{Binding Product.ProductTypeId, Mode=TwoWay}"/>
-                <Label Grid.Row="4" Content="Поставщик" Margin="10 0"/>
+                <Label Grid.Row="4" Content="Provider" Margin="10 0"/>
                 <ComboBox Grid.Row="5" Margin="10 0 10 10"
                   ItemsSource="{Binding Providers}"
                   DisplayMemberPath="DisplayMember"
                   SelectedValuePath="Id"
                   SelectedValue="{Binding Product.ProviderId, Mode=TwoWay}"/>
-                <Label Grid.Row="6" Content="Цена" Margin="10 0"/>
+                <Label Grid.Row="6" Content="Price" Margin="10 0"/>
                 <TextBox Grid.Row="7" Text="{Binding Product.Price, StringFormat={}{0:C},
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-                <Label Grid.Row="8" Content="Скидка" Margin="10 0"/>
+                <Label Grid.Row="8" Content="Discount" Margin="10 0"/>
                 <ComboBox Grid.Row="9" Margin="10 0 10 10"
                   ItemsSource="{Binding ProductDiscounts}"
                   ItemStringFormat="{}{0}%"
                   DisplayMemberPath="DisplayMember"
                   SelectedValuePath="Id"
                   SelectedValue="{Binding Product.ProductDiscountId, Mode=TwoWay}"/>
-                <Label Grid.Row="10" Content="Ед.Измерения" Margin="10 0"/>
+                <Label Grid.Row="10" Content="Unit" Margin="10 0"/>
                 <ComboBox Grid.Row="11" Margin="10 0 10 10"
                   ItemsSource="{Binding ProductMeasures}"
                   DisplayMemberPath="DisplayMember"
                   SelectedValuePath="Id"
                   SelectedValue="{Binding Product.ProductMeasureId, Mode=TwoWay}"/>
-                <Label Grid.Row="12" Content="Остаток" Margin="10 0"/>
+                <Label Grid.Row="12" Content="Balance" Margin="10 0"/>
                 <TextBox Grid.Row="13" Text="{Binding Product.StockBalance,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-                <Label Grid.Row="14" Content="Технические характеристики" Margin="10 0"/>
+                <Label Grid.Row="14" Content="Specifications" Margin="10 0"/>
                 <TextBox Grid.Row="15" Height="70" Text="{Binding Product.Info,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
 
@@ -84,7 +84,7 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Label Content="Текущий поставщик"/>
+            <Label Content="Current Provider"/>
             <ListView Grid.Row="1"
                       ItemsSource="{Binding AddedProviders}"
                       SelectedItem="{Binding SelectedAddedProvider}"/>
@@ -94,16 +94,16 @@
                 <Button Content="&gt;&gt;" Margin="10 0 10 10" Command="{Binding RemoveProviderCommand}"/>
             </StackPanel>
             
-            <Label Content="Доступные поставщики" Grid.Column="2"/>
+            <Label Content="Available Providers" Grid.Column="2"/>
             <ListView Grid.Row="1" Grid.Column="2"
                       ItemsSource="{Binding AvailableProviders}"
                       SelectedItem="{Binding SelectedAvailableProvider}"/>
         </Grid>-->
 
                 <StackPanel Grid.Row="17" Orientation="Horizontal">
-                    <Button Content="Сохранить" Width="125" Margin="10"
+                    <Button Content="Save" Width="125" Margin="10"
                     Command="{Binding SaveCommand}"/>
-                    <Button Content="Удалить" Width="125" Margin="10"
+                    <Button Content="Delete" Width="125" Margin="10"
                     Command="{Binding DeleteCommand}"/>
                 </StackPanel>
             </Grid>

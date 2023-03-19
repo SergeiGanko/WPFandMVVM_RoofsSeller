@@ -12,9 +12,9 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <GroupBox Header="Оклад" Padding="3" Margin="5">
+        <GroupBox Header="Ventilation duct cover" Padding="3" Margin="5">
             <StackPanel>
-                <Label Content="Размер боковин, мм (шир. X выс.)"/>
+                <Label Content="Sidewall size, mm (width X height)"/>
                 <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
                     <TextBox Width="70" IsReadOnly="True"
                              Text="{Binding PipeAbutment.SideWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -22,7 +22,7 @@
                     <TextBox Width="70" IsReadOnly="True"
                              Text="{Binding PipeAbutment.SideLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
-                <Label Content="Размер фронт. части, мм (шир. X выс.)"/>
+                <Label Content="Front size, mm (width X height)"/>
                 <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
                     <TextBox Width="70" IsReadOnly="True"
                              Text="{Binding PipeAbutment.FrontWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -30,7 +30,7 @@
                     <TextBox Width="70" IsReadOnly="True"
                              Text="{Binding PipeAbutment.FrontLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
-                <Label Content="Размер тыльной части, мм (шир. X выс.)"/>
+                <Label Content="Back size, mm (width X height)"/>
                 <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
                     <TextBox Width="70" IsReadOnly="True"
                              Text="{Binding PipeAbutment.BackWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -38,7 +38,7 @@
                     <TextBox Width="70" IsReadOnly="True"
                              Text="{Binding PipeAbutment.BackLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
-                <Label Content="Стоимость оклада"/>
+                <Label Content="Price"/>
                 <TextBox Width="70" IsReadOnly="True" HorizontalAlignment="Left" Margin="10 0 0 0"
                          Text="{Binding PipeAbutment.AbutmentCost, StringFormat={}{0:C}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"/>
 

@@ -17,10 +17,10 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <GroupBox Header="Зонт" Padding="3" Margin="5">
+        <GroupBox Header="Umbrella" Padding="3" Margin="5">
             <StackPanel>
 
-                <Label Content="Посадка, мм (шир. X дл. - кол.)"/>
+                <Label Content="Fit, mm (width X length - count)"/>
                 <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
                     <TextBox Text="{Binding PipeUmbrella.FitWidthSide13, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content="X" Margin="0"></Label>
@@ -28,7 +28,7 @@
                     <Label Content=" - " Margin="0"></Label>
                     <TextBox Width="30"
                      Text="{Binding PipeUmbrella.FitQuantitySide13, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                    <Label Content=" шт." Margin="0"></Label>
+                    <Label Content=" PC." Margin="0"></Label>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="10 10 10 0">
                     <TextBox Text="{Binding PipeUmbrella.FitWidthSide24, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -37,10 +37,10 @@
                     <Label Content=" - " Margin="0"></Label>
                     <TextBox Width="30"
                      Text="{Binding PipeUmbrella.FitQuantitySide24, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                    <Label Content=" шт." Margin="0"></Label>
+                    <Label Content=" PC." Margin="0"></Label>
                 </StackPanel>
 
-                <Label Content="Ноги, мм (шир. X выс. - кол.)"/>
+                <Label Content="Shanks, mm (width x height - count)"/>
                 <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
                     <TextBox Text="{Binding PipeUmbrella.LegWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content="X" Margin="0"></Label>
@@ -48,51 +48,51 @@
                     <Label Content=" - " Margin="0"></Label>
                     <TextBox Width="30"
                      Text="{Binding PipeUmbrella.LegQuantity, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                    <Label Content=" шт." Margin="0"></Label>
+                    <Label Content=" PC." Margin="0"></Label>
                 </StackPanel>
 
-                <Label Content="Закладные, мм (шир. X выс. - кол.)"/>
+                <Label Content="Bars, mm (width X height - count)"/>
                 <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
                     <TextBox Text="{Binding PipeUmbrella.SubBarWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content="X" Margin="0"></Label>
                     <TextBox Text="{Binding PipeUmbrella.SubBarHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content=" - " Margin="0"></Label>
                     <TextBox Width="30" Text="{Binding PipeUmbrella.SubBarQuantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                    <Label Content=" шт." Margin="0"></Label>
+                    <Label Content=" PC." Margin="0"></Label>
                 </StackPanel>
 
-                <Label Content="Дно, мм (шир. X дл.)"/>
+                <Label Content="Bottom, mm (width X length)"/>
                 <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
                     <TextBox Text="{Binding PipeUmbrella.BottomPartWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content="X" Margin="0"></Label>
                     <TextBox Text="{Binding PipeUmbrella.BottomPartLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
 
-                <Label Content="Вальма, мм (шир. X дл.)"/>
+                <Label Content="Hip, mm (width X length)"/>
                 <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
                     <TextBox Text="{Binding PipeUmbrella.ValmaWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content="X" Margin="0"></Label>
                     <TextBox Text="{Binding PipeUmbrella.ValmaLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </StackPanel>
 
-                <Label Content="'Треугольники' , мм (шир. X дл. - кол.)"/>
+                <Label Content="'Triangles' , mm (width X length - count)"/>
                 <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
                     <TextBox Text="{Binding PipeUmbrella.TriangleWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content="X" Margin="0"></Label>
                     <TextBox Text="{Binding PipeUmbrella.TriangleLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content=" - " Margin="0"></Label>
                     <TextBox Width="30" Text="2"></TextBox>
-                    <Label Content=" шт." Margin="0"></Label>
+                    <Label Content=" PC." Margin="0"></Label>
                 </StackPanel>
 
-                <Label Content="Жалюзи, мм (шир. X выс. - кол.)"/>
+                <Label Content="Blinds, mm (width X height - count)"/>
                 <StackPanel Orientation="Horizontal" Margin="10 0 10 0">
                     <TextBox Text="{Binding PipeUmbrella.LouversLengthSide13, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content="X" Margin="0"></Label>
                     <TextBox Text="{Binding PipeUmbrella.LouversWidthSide13, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content=" - " Margin="0"></Label>
                     <TextBox Width="30" Text="6"></TextBox>
-                    <Label Content=" шт." Margin="0"></Label>
+                    <Label Content=" PC." Margin="0"></Label>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="10 10 10 0">
@@ -101,13 +101,13 @@
                     <TextBox Text="{Binding PipeUmbrella.LouversWidthSide24, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     <Label Content=" - " Margin="0"></Label>
                     <TextBox Width="30" Text="6"></TextBox>
-                    <Label Content=" шт." Margin="0"></Label>
+                    <Label Content=" PC." Margin="0"></Label>
                 </StackPanel>
 
-                <Label Content="Металла для зонта, м.кв"/>
+                <Label Content="Metal for an umbrella, sq.m."/>
                 <TextBox HorizontalAlignment="Left" Margin="10 0 0 0"
                  Text="{Binding PipeUmbrella.MetalRequired, StringFormat={}{0:F}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Content="Стоимость зонта"/>
+                <Label Content="Price"/>
                 <TextBox HorizontalAlignment="Left" Margin="10 0 10 10"
                  Text="{Binding PipeUmbrella.UmbrellaCost, StringFormat={}{0:C}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>

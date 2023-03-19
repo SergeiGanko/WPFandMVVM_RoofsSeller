@@ -45,27 +45,27 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
             <StackPanel Orientation="Vertical" Margin="10 0 0 0">
-                <Label Content="Длина трубы, мм"/>
+                <Label Content="Pipe length, mm"/>
                 <TextBox Text="{Binding Pipe.PipeLength, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                      Width="100" HorizontalContentAlignment="Right"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10 0 0 0">
-                <Label Content="Ширина трубы, мм"/>
+                <Label Content="Pipe width, mm"/>
                 <TextBox Text="{Binding Pipe.PipeWidth, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                      Width="100" HorizontalContentAlignment="Right"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10 0 0 0">
-                <Label Content="Угол кровли, град."/>
+                <Label Content="Roof angle, deg."/>
                 <TextBox Text="{Binding Pipe.RoofAngle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                      Width="100" HorizontalContentAlignment="Right"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10 0 0 0">
-                <Label Content="Высота трубы h1, мм"/>
+                <Label Content="Pipe height h1, mm"/>
                 <TextBox Text="{Binding Pipe.PipeHeight1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                          Width="100" HorizontalContentAlignment="Right"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10 0 0 0">
-                <Label Content="Высота трубы h2, мм"/>
+                <Label Content="Pipe height h2, mm"/>
                 <TextBox Text="{Binding Pipe.PipeHeight2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                          Width="100" HorizontalContentAlignment="Right"/>
             </StackPanel>
@@ -73,17 +73,17 @@
         
         <StackPanel Orientation="Horizontal" Grid.Row="2">
             <StackPanel Orientation="Vertical" Margin="10 5 0 0">
-                <Label Content="Толщина обрешетки, мм"/>
+                <Label Content="Lathing thickness, mm"/>
                 <TextBox Text="{Binding Pipe.BarThickness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                      Width="100" HorizontalContentAlignment="Right"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10 5 0 0">
-                <Label Content="Толщина утеплителя, мм"/>
+                <Label Content="Insulation thickness, mm"/>
                 <TextBox Text="{Binding Pipe.InsulationThickness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                      Width="100" HorizontalContentAlignment="Right"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10 5 0 0">
-                <Label Content="Толщина контробрешетки, мм"/>
+                <Label Content="Counter-lathing Thickness, mm"/>
                 <TextBox Text="{Binding Pipe.ContrBarThickness, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                          Width="100" HorizontalContentAlignment="Right"/>
             </StackPanel>
@@ -91,7 +91,7 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="3">
             <StackPanel Orientation="Vertical" Margin="10 5 0 5">
-                <Label Content="Плоский лист"/>
+                <Label Content="Flat sheet"/>
                 <ComboBox ItemsSource="{Binding Metals}"
                           DisplayMemberPath="DisplayMember"
                           SelectedValuePath="Cost"
@@ -100,21 +100,21 @@
                           SelectedIndex="0"/>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10 5 0 5">
-                <Label Content="Вид обшивки"/>
+                <Label Content="Shell kind"/>
                 <ComboBox ItemsSource="{Binding KindsOfShell}"
                           Width="160"
                           SelectedValue="{Binding PipeShell.KindOfShell, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                 </ComboBox>
             </StackPanel>
             <StackPanel Orientation="Vertical" Margin="10 5 0 5">
-                <Label Content="Вид зонта"/>
+                <Label Content="Umbrella kind"/>
                 <ComboBox ItemsSource="{Binding KindsOfUmbrella}"
                           Width="160"
                           SelectedValue="{Binding PipeUmbrella.KindOfUmbrella, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
             <Button Margin="10 15 0 0" Width="150" Height="35"
                     HorizontalAlignment="Right"
-                    Content="Рассчитать"
+                    Content="Calculate"
                     Command="{Binding CalculateCommand}"/>
         </StackPanel>
 

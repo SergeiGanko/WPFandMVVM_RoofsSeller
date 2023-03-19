@@ -22,40 +22,40 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
-            <Label Content="Заказ № " Margin="10 10 0 10"/>
+            <Label Content="Order number " Margin="10 10 0 10"/>
             <TextBox Width="90" Margin="10" Text="{Binding Order.OrderNumber,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Content=" от " Margin="10"/>
             <DatePicker SelectedDate="{Binding Order.OrderDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                         SelectedDateFormat="Short" Margin="10"/>
         </StackPanel>
-        <Label Content="Заказчик" Grid.Row="1" Margin="10 10 0 10"/>
+        <Label Content="Customer" Grid.Row="1" Margin="10 10 0 10"/>
         <ComboBox Grid.Row="1" Grid.Column="1" Margin="10"
                   ItemsSource="{Binding Customers}"
                   DisplayMemberPath="DisplayMember"
                   SelectedValuePath="Id"
                   SelectedValue="{Binding Order.CustomerId, Mode=TwoWay}"/>
-        <Label Content="Дата отгрузки" Grid.Row="2" Margin="10 10 0 10"/>
+        <Label Content="Shipment Date" Grid.Row="2" Margin="10 10 0 10"/>
         <DatePicker Grid.Row="2" Grid.Column="1" Margin="10"
                     SelectedDate="{Binding Order.ShippingDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                     SelectedDateFormat="Short"/>
-        <Label Content="Состояние заказа" Grid.Row="3" Margin="10 10 0 10"/>
+        <Label Content="Order State" Grid.Row="3" Margin="10 10 0 10"/>
         <ComboBox Grid.Row="3" Grid.Column="1" Margin="10"
                   ItemsSource="{Binding OrderStates}"
                   DisplayMemberPath="DisplayMember"
                   SelectedValuePath="Id"
                   SelectedValue="{Binding Order.StateId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-        <Label Content="Общая сумма" Grid.Row="4" Margin="10 10 0 10"/>
+        <Label Content="Total Price" Grid.Row="4" Margin="10 10 0 10"/>
         <TextBox Grid.Row="4" Grid.Column="1" Margin="10 10 10 10"
                  Text="{Binding Order.TotalAmount, StringFormat={}{0:C}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                  IsReadOnly="True"/>
 
         <TabControl Grid.Row="5" Grid.ColumnSpan="2" Margin="10">
-            <TabItem Header="Детали заказа">
+            <TabItem Header="Order Details">
                 <DockPanel Grid.Row="5" Grid.ColumnSpan="2" Margin="10">
-                    <!--<Label DockPanel.Dock="Top" FontSize="16" Content="Состав заказа"/>-->
+                    <!--<Label DockPanel.Dock="Top" FontSize="16" Content="Order list"/>-->
                     <!--<StackPanel DockPanel.Dock="Right" Orientation="Vertical">
-                        <Button Content="Редактировать" Width="Auto" Margin="10 10 0 10"
+                        <Button Content="Edit" Width="Auto" Margin="10 10 0 10"
                             Command="{Binding EditOrderItemCommand}"/>
                     </StackPanel>-->
                     <DataGrid ItemsSource="{Binding OrderItems}"
@@ -64,31 +64,31 @@
                               GridLinesVisibility="Vertical" CanUserReorderColumns="False"
                               FrozenColumnCount="1" IsReadOnly="True">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Наименование" Width="Auto"
+                            <DataGridTextColumn Header="Name" Width="Auto"
                                ElementStyle="{StaticResource DataGridColumnStyle}"
                                EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                                Binding="{Binding Product.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <DataGridTextColumn Header="Тип" Width="Auto" IsReadOnly="True"
+                            <DataGridTextColumn Header="Type" Width="Auto" IsReadOnly="True"
                                ElementStyle="{StaticResource DataGridColumnStyle}"
                                EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                                Binding="{Binding Product.ProductType.Type, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <DataGridTextColumn Header="Ед.изм." Width="Auto"
+                            <DataGridTextColumn Header="Unit" Width="Auto"
                                ElementStyle="{StaticResource DataGridColumnStyle}"
                                EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                                Binding="{Binding Product.ProductMeasure.Measure, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <DataGridTextColumn Header="Кол-во" Width="Auto"
+                            <DataGridTextColumn Header="Quantity" Width="Auto"
                                ElementStyle="{StaticResource DataGridColumnStyle}"
                                EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                                Binding="{Binding Quantity, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <DataGridTextColumn Header="Цена" Width="Auto"
+                            <DataGridTextColumn Header="Price" Width="Auto"
                                ElementStyle="{StaticResource DataGridColumnStyle}"
                                EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                                Binding="{Binding UnitPrice, StringFormat={}{0:C}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <DataGridTextColumn Header="Скидка" Width="Auto"
+                            <DataGridTextColumn Header="Discount" Width="Auto"
                                ElementStyle="{StaticResource DataGridColumnStyle}"
                                EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                                Binding="{Binding Product.ProductDiscount.Rate, StringFormat={}{0}%, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <DataGridTextColumn Header="Всего" Width="Auto"
+                            <DataGridTextColumn Header="Total" Width="Auto"
                                ElementStyle="{StaticResource DataGridColumnStyle}"
                                EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                                Binding="{Binding TotalPrice, StringFormat={}{0:C}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -96,7 +96,7 @@
                     </DataGrid>
                 </DockPanel>
             </TabItem>
-            <TabItem Header="Редактировать заказ">
+            <TabItem Header="Edit Order">
                 <Grid>
                     <Grid.Resources>
                         <DataTemplate DataType="{x:Type model:Product}">
@@ -115,7 +115,7 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Label Content="Состав заказа"/>
+                    <Label Content="Order List"/>
                     <ListView Grid.Row="1" 
                       ItemsSource="{Binding AddedProducts}"
                       SelectedItem="{Binding SelectedAddedProduct}"/>
@@ -126,7 +126,7 @@
                         <TextBox Margin="10" Text="{Binding ProductQuantityToAdd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </StackPanel>
 
-                    <Label Content="Товары в наличии" Grid.Column="2"/>
+                    <Label Content="Items in stock" Grid.Column="2"/>
                     <ListView Grid.Row="1" Grid.Column="2"
                       ItemsSource="{Binding AvailableProducts}"
                       SelectedItem="{Binding SelectedAvailableProduct}"/>
@@ -135,9 +135,9 @@
         </TabControl>
 
         <StackPanel Grid.Row="6" Orientation="Horizontal" Grid.ColumnSpan="2">
-            <Button Content="Сохранить" Width="125" Margin="10"
+            <Button Content="Save" Width="125" Margin="10"
                     Command="{Binding SaveCommand}"/>
-            <Button Content="Удалить" Width="125" Margin="10"
+            <Button Content="Delete" Width="125" Margin="10"
                     Command="{Binding DeleteCommand}"/>
         </StackPanel>
     </Grid>

@@ -47,39 +47,39 @@
         </Grid.ColumnDefinitions>
 <!-- ******* Menu ******* -->
         <Menu Grid.ColumnSpan="2" FontSize="16">
-            <MenuItem Header="Файл">
-                <MenuItem Header="Выход" Command="{Binding AppExitCommand}"
+            <MenuItem Header="File">
+                <MenuItem Header="Close" Command="{Binding AppExitCommand}"
                           CommandParameter="{x:Type viewModel:MainViewModel}">
                 </MenuItem>
-                <!--<MenuItem Header="Экспорт XML" Command="{Binding ExportCommand}"
+                <!--<MenuItem Header="Export XML" Command="{Binding ExportCommand}"
                           CommandParameter="{x:Type viewModel:ProviderDetailViewModel}">
                 </MenuItem>
-                <MenuItem Header="Импорт XML" Command="{Binding ImportCommand}"
+                <MenuItem Header="Import XML" Command="{Binding ImportCommand}"
                           CommandParameter="{x:Type viewModel:ProviderDetailViewModel}">
                 </MenuItem>-->
             </MenuItem>
-            <MenuItem Header="Создать">
-                <MenuItem Header="Новый покупатель" Command="{Binding CreateNewDetailCommand}"
+            <MenuItem Header="Create">
+                <MenuItem Header="New Customer" Command="{Binding CreateNewDetailCommand}"
                           CommandParameter="{x:Type viewModel:CustomerDetailViewModel}"/>
-                <MenuItem Header="Новый заказ" Command="{Binding CreateNewDetailCommand}"
+                <MenuItem Header="New Order" Command="{Binding CreateNewDetailCommand}"
                           CommandParameter="{x:Type viewModel:OrderDetailViewModel}"/>
-                <MenuItem Header="Новый продукт" Command="{Binding CreateNewDetailCommand}"
+                <MenuItem Header="New Product" Command="{Binding CreateNewDetailCommand}"
                           CommandParameter="{x:Type viewModel:ProductDetailViewModel}"/>
-                <MenuItem Header="Новый поставщик" Command="{Binding CreateNewDetailCommand}"
+                <MenuItem Header="New Provider" Command="{Binding CreateNewDetailCommand}"
                           CommandParameter="{x:Type viewModel:ProviderDetailViewModel}"/>
             </MenuItem>
-            <MenuItem Header="Изменить">
-                <MenuItem Header="Тип продукта" Command="{Binding OpenSingleDetailViewCommand}"
+            <MenuItem Header="Edit">
+                <MenuItem Header="Product Type" Command="{Binding OpenSingleDetailViewCommand}"
                           CommandParameter="{x:Type viewModel:ProductTypeDetailViewModel}"/>
             </MenuItem>
-            <MenuItem Header="Статистика">
-                <MenuItem Header="Остатки" Command="{Binding OpenSingleDetailViewCommand}"
+            <MenuItem Header="Statistics">
+                <MenuItem Header="Balance" Command="{Binding OpenSingleDetailViewCommand}"
                           CommandParameter="{x:Type viewModel:StocksStatisticDetailViewModel}"/>
             </MenuItem>
-            <MenuItem Header="Расчет">
-                <MenuItem Header="Калькулятор вентканала" Command="{Binding OpenSingleDetailViewCommand}"
+            <MenuItem Header="Calculation">
+                <MenuItem Header="Ventilation duct calculator" Command="{Binding OpenSingleDetailViewCommand}"
                           CommandParameter="{x:Type viewModel:ChimneyCalculatingDetailViewModel}"/>
-                <MenuItem Header="Калькулятор металлочерепицы" Command="{Binding OpenSingleDetailViewCommand}"
+                <MenuItem Header="Metal tile calculator" Command="{Binding OpenSingleDetailViewCommand}"
                           CommandParameter="{x:Type viewModel:RoofCalculatorDetailViewModel}"/>
             </MenuItem>
         </Menu>

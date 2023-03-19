@@ -32,7 +32,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
-            <Label Content="Состав заказа"/>
+            <Label Content="Order list"/>
             <ListView Grid.Row="1" 
                       ItemsSource="{Binding AddedProducts}"
                       SelectedItem="{Binding SelectedAddedProduct}"/>
@@ -43,7 +43,7 @@
                 <TextBox Margin="10" Text="{Binding ProductQuantityToAdd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             </StackPanel>
 
-            <Label Content="Товары в наличии" Grid.Column="2"/>
+            <Label Content="Items in stock" Grid.Column="2"/>
             <ListView Grid.Row="1" Grid.Column="2"
                       ItemsSource="{Binding AvailableProducts}"
                       SelectedItem="{Binding SelectedAvailableProduct}"/>
@@ -51,8 +51,8 @@
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" 
                     HorizontalAlignment="Right">
-            <Button Content="Ок" Width="100" Margin="10"/>
-            <Button Content="Отмена" Width="100" Margin="10"/>
+            <Button Content="Ok" Width="100" Margin="10"/>
+            <Button Content="Cancel" Width="100" Margin="10"/>
         </StackPanel>
     </Grid>
 </UserControl>

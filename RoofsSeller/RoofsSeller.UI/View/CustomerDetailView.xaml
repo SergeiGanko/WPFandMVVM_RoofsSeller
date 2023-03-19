@@ -24,27 +24,27 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Label Content="Имя" Margin="10 10 10 0"/>
+                <Label Content="Name" Margin="10 10 10 0"/>
                 <TextBox Grid.Row="1" Text="{Binding Customer.Name,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-                <Label Grid.Row="2" Content="Адрес" Margin="10 0"/>
+                <Label Grid.Row="2" Content="Address" Margin="10 0"/>
                 <TextBox Grid.Row="3" Text="{Binding Customer.Address,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-                <Label Grid.Row="4" Content="Инфо" Margin="10 0"/>
+                <Label Grid.Row="4" Content="Info" Margin="10 0"/>
                 <TextBox Grid.Row="5" Text="{Binding Customer.Info,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
                 <Label Grid.Row="6" Content="Email" Margin="10 0"/>
                 <TextBox Grid.Row="7" Text="{Binding Customer.Email,
                 TargetNullValue='',
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-                <Label Grid.Row="8" Content="№ телефона" Margin="10 0"/>
+                <Label Grid.Row="8" Content="Phone" Margin="10 0"/>
                 <TextBox Grid.Row="9" Text="{Binding Customer.Phone,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
                 <!--<DockPanel Grid.Row="10" Margin="10">
             <StackPanel DockPanel.Dock="Right">
-                <Button Content="Добавить" Width="125" Margin="10"
+                <Button Content="Add" Width="125" Margin="10"
                         Command="{Binding AddOrderCommand}"/>
-                <Button Content="Удалить" Width="125" Margin="10"
+                <Button Content="Delete" Width="125" Margin="10"
                         Command="{Binding RemoveOrderCommand}"/>
             </StackPanel>
             <DataGrid ItemsSource="{Binding Orders}"
@@ -52,27 +52,27 @@
                       SelectedItem="{Binding SelectedOrder, Mode=TwoWay}"
                       AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="№ заказа" Width="*"
+                    <DataGridTextColumn Header="Order number" Width="*"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        Binding="{Binding OrderNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="№ договора" Width="*"
+                    <DataGridTextColumn Header="Contract number" Width="*"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        Binding="{Binding ContractNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="Дата заказа" Width="*"
+                    <DataGridTextColumn Header="Order Date" Width="*"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        Binding="{Binding OrderDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="Состояние заказа" Width="*"
+                    <DataGridTextColumn Header="Order state" Width="*"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        Binding="{Binding State, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="Дата отгрузки" Width="*"
+                    <DataGridTextColumn Header="Shipment date" Width="*"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        Binding="{Binding ShippingDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="Общая сумма" Width="*"
+                    <DataGridTextColumn Header="Amount" Width="*"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        Binding="{Binding TotalAmount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -80,9 +80,9 @@
             </DataGrid>
         </DockPanel>-->
                 <StackPanel Grid.Row="11" Orientation="Horizontal">
-                    <Button Content="Сохранить" Width="125" Margin="10"
+                    <Button Content="Save" Width="125" Margin="10"
                     Command="{Binding SaveCommand}"/>
-                    <Button Content="Удалить" Width="125" Margin="10"
+                    <Button Content="Delete" Width="125" Margin="10"
                     Command="{Binding DeleteCommand}"/>
                 </StackPanel>
             </Grid>

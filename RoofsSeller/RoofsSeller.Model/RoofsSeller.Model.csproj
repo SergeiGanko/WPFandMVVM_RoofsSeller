@@ -57,9 +57,12 @@
     <Compile Include="Entities\PipeUmbrella.cs" />
     <Compile Include="Entities\Roof.cs" />
     <Compile Include="Entities\Slope.cs" />
+    <Compile Include="Enums\OrderState.cs" />
+    <Compile Include="Enums\ProductType.cs" />
     <Compile Include="LookupItem.cs" />
     <Compile Include="PicClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

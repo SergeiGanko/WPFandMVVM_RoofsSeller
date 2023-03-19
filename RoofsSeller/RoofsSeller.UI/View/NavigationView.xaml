@@ -55,7 +55,7 @@
                     <Setter Property="Padding" Value="7"/>
                 </Style>
             </TabControl.Resources>
-            <TabItem Header="Покупатели">
+            <TabItem Header="Customers">
                 <ScrollViewer VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding Customers}"
@@ -63,7 +63,7 @@
                           ItemTemplate="{StaticResource NaviItemTemplate}"/>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="Заказы">
+            <TabItem Header="Orders">
                 <ScrollViewer VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding Orders}"
@@ -71,7 +71,7 @@
                           ItemTemplate="{StaticResource NaviItemTemplate}"/>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="Склад">
+            <TabItem Header="Stock">
                 <ScrollViewer VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding Products}"
@@ -79,7 +79,7 @@
                           ItemTemplate="{StaticResource NaviItemTemplate}"/>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="Поставщики">
+            <TabItem Header="Providers">
                 <ScrollViewer VerticalScrollBarVisibility="Auto"
                       HorizontalScrollBarVisibility="Auto">
                     <ItemsControl ItemsSource="{Binding Providers}"

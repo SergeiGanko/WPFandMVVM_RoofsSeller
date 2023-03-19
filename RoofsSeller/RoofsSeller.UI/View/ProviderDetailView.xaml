@@ -27,19 +27,19 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Label Content="Поставщик" Margin="10 10 10 0"/>
+                <Label Content="Provider" Margin="10 10 10 0"/>
                 <TextBox Grid.Row="1" Text="{Binding Provider.Name,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-                <Label Grid.Row="2" Content="Адрес" Margin="10 10 10 0"/>
+                <Label Grid.Row="2" Content="Address" Margin="10 10 10 0"/>
                 <TextBox Grid.Row="3" Text="{Binding Provider.Address,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-                <Label Grid.Row="4" Content="Телефон" Margin="10 10 10 0"/>
+                <Label Grid.Row="4" Content="Phone" Margin="10 10 10 0"/>
                 <TextBox Grid.Row="5" Text="{Binding Provider.Phone,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
                 <Label Grid.Row="6" Content="Email" Margin="10 10 10 0"/>
                 <TextBox Grid.Row="7" Text="{Binding Provider.Email,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
-                <Label Grid.Row="8" Content="Инфо" Margin="10 10 10 0"/>
+                <Label Grid.Row="8" Content="Info" Margin="10 10 10 0"/>
                 <TextBox Grid.Row="9" Text="{Binding Provider.Info,
                 Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 10 10"/>
 
@@ -55,11 +55,11 @@
                       SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
                       AutoGenerateColumns="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Наименование" Width="Auto"
+                    <DataGridTextColumn Header="Name" Width="Auto"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        Binding="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTemplateColumn Header="Тип" Width="Auto">
+                    <DataGridTemplateColumn Header="Type" Width="Auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <ComboBox ItemsSource="{Binding ProductTypes}"
@@ -70,7 +70,7 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     -->
-                <!--<DataGridComboBoxColumn Header="Тип" Width="Auto"
+                <!--<DataGridComboBoxColumn Header="Type" Width="Auto"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        ItemsSource="{Binding ProductTypes, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -78,19 +78,19 @@
                        SelectedValuePath="Id"
                        SelectedValueBinding="{Binding Products.ProductDiscountId, Mode=TwoWay}"/>-->
                 <!--
-                    <DataGridTextColumn Header="Ед. изм." Width="Auto"
+                    <DataGridTextColumn Header="Unit" Width="Auto"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        Binding="{Binding Measure, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="Цена" Width="Auto"
+                    <DataGridTextColumn Header="Price" Width="Auto"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        Binding="{Binding Price, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="Скидка" Width="Auto"
+                    <DataGridTextColumn Header="Discount" Width="Auto"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        Binding="{Binding ProductDiscount.Rate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                    <DataGridTextColumn Header="Остаток" Width="Auto"
+                    <DataGridTextColumn Header="Balance" Width="Auto"
                        ElementStyle="{StaticResource DataGridColumnStyle}"
                        EditingElementStyle="{StaticResource DataGridEditingColumnStyle}"
                        Binding="{Binding StockBalance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
@@ -99,9 +99,9 @@
         </DockPanel>-->
 
                 <StackPanel Grid.Row="11" Orientation="Horizontal">
-                    <Button Content="Сохранить" Width="125" Margin="10"
+                    <Button Content="Save" Width="125" Margin="10"
                     Command="{Binding SaveCommand}"/>
-                    <Button Content="Удалить" Width="125" Margin="10"
+                    <Button Content="Delete" Width="125" Margin="10"
                     Command="{Binding DeleteCommand}"/>
                 </StackPanel>
             </Grid>
