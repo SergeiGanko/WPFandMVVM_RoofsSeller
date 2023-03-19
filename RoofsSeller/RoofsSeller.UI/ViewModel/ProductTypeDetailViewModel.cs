@@ -23,7 +23,7 @@ namespace RoofsSeller.UI.ViewModel
             IProductTypeRepository productTypeRepository) : base(eventAggregator, messageDialogService)
         {
             _productTypeRepository = productTypeRepository;
-            Title = "Типы продуктов";
+            Title = "Product Types";
 
             ProductTypes = new ObservableCollection<ProductTypeWrapper>();
 
@@ -107,7 +107,7 @@ namespace RoofsSeller.UI.ViewModel
                     ex = ex.InnerException;
                 }
                 await MessageDialogService.ShowInfoDialogAsync(
-                    "Ошибка сохранения сущности, данные будут перезагружены. Подробности: " + ex.Message);
+                    "Error saving entity, data will be reloaded. Details:" + ex.Message);
                 await LoadAsync(Id);
             }
         }
@@ -119,7 +119,7 @@ namespace RoofsSeller.UI.ViewModel
             _productTypeRepository.Add(wrapper.Model);
             ProductTypes.Add(wrapper);
 
-            // Triiger the validation
+            // Trigger the validation
             wrapper.Type = "";
         }
 
@@ -135,7 +135,7 @@ namespace RoofsSeller.UI.ViewModel
             if (isReferenced)
             {
                 await MessageDialogService.ShowInfoDialogAsync(
-                    $"Тип {SelectedProductType.Type} не может быть удален, т.к. связан как минимум с одним товаром");
+                    $"The type {SelectedProductType.Type} cannot be deleted because associated with at least one product");
                 return;
             }
 

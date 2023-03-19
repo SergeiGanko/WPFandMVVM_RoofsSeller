@@ -13,6 +13,6 @@ namespace RoofsSeller.Model.Entities
         public decimal ModuleCost { get; set; }
         public double ModuleEffectiveSquare { get; set; }
         public int ModuleQuantity { get; set; }
-        public decimal Summ { get; set; }
+        public decimal Sum { get; set; }
     }
 }

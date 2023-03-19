@@ -21,8 +21,8 @@ namespace RoofsSeller.DataAccess.DataGenerators
                 .RuleFor(c => c.Name, f => f.Commerce.ProductName())
                 .RuleFor(c => c.Price, f => f.Random.Decimal(0.0M, 1000.0M))
                 .RuleFor(c => c.StockBalance, f => f.Random.Number(0, 10_000))
-                .RuleFor(c => c.ProductTypeId, f => f.Random.Number(0, 9))
-                .RuleFor(c => c.ProductDiscountId, f => f.Random.Number(1, 1))
+                .RuleFor(c => c.ProductTypeId, f => f.Random.Number(1, 10))
+                .RuleFor(c => c.ProductDiscountId, f => f.Random.Number(1, 11))
                 .RuleFor(c => c.ProductMeasureId, f => f.Random.Number(1, 6))
                 .RuleFor(c => c.Info, f => f.Commerce.ProductDescription());
         }

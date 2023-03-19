@@ -111,7 +111,7 @@ namespace RoofsSeller.UI.ViewModel
             if (HasChanges)
             {
                 var result = await MessageDialogService.ShowOkCancelDialogAsync(
-                     "Все несохраненные изменения будут утеряны. Продолжить?", "Внимание");
+                     "All unsaved changes will be lost. Continue?", "Attention");
                 if (result==MessageDialogResult.Cancel)
                 {
                     return;
@@ -138,15 +138,15 @@ namespace RoofsSeller.UI.ViewModel
                 if (databaseValues == null)
                 {
                     await MessageDialogService.ShowInfoDialogAsync(
-                        "Данные были удалены другим пользователем!");
+                        "Data has been deleted by another user!");
                     RaiseDetailDeletedEvent(Id);
                     return;
                 }
 
                 var result = await MessageDialogService.ShowOkCancelDialogAsync(
-                    "Данные были изменены другим пользователем." +
-                    "Нажмите Ок чтобы все равно сохранить ваши изменения," +
-                    "нажмите Cancel, чтобы перезагрузить данные из базы данных.", "Внимание!");
+                    "The data has been modified by another user." +
+                    "Click OK to save your changes anyway." +
+                    "click Cancel to reload the data from the database.", "Attention!");
                 if (result == MessageDialogResult.Ok)
                 {
                     var entry = ex.Entries.Single();

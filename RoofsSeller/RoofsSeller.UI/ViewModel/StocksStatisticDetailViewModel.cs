@@ -29,7 +29,7 @@ namespace RoofsSeller.UI.ViewModel
         {
             _productRepository = productRepository;
             _productTypeRepository = productTypeRepository;
-            Title = "Остатки на складе";
+            Title = "Stock Balance";
 
             Products = new ObservableCollection<Product>();
             ProductTypes = new ObservableCollection<ProductType>();
@@ -145,8 +145,7 @@ namespace RoofsSeller.UI.ViewModel
             }
             else
             {
-                await MessageDialogService.ShowInfoDialogAsync(
-                        "Продуктов указанного типа нет на складе");
+                await MessageDialogService.ShowInfoDialogAsync("Products of the specified type are not in stock");
             }
         }
 

@@ -10,7 +10,7 @@ namespace RoofsSeller.UI.View.Services
 
         public async Task ShowInfoDialogAsync(string text)
         {
-            await MetroWindow.ShowMessageAsync("Внимание", text);
+            await MetroWindow.ShowMessageAsync("Attention", text);
         }
 
         public async Task<MessageDialogResult> ShowOkCancelDialogAsync(string text, string title)

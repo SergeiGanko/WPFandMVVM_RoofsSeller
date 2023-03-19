@@ -5,8 +5,9 @@ namespace RoofsSeller.DataAccess
 {
     public class RoofsSellerDbContext : DbContext
     {
-        public RoofsSellerDbContext() : base("RoofsSellerDb3")
+        public RoofsSellerDbContext() : base("RoofsSellerDb")
         {
+            //Database.SetInitializer<RoofsSellerDbContext>(new CreateDatabaseIfNotExists<RoofsSellerDbContext>());
         }
         
         public DbSet<Customer> Customers { get; set; }

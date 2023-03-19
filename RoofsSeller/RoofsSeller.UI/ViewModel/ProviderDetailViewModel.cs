@@ -49,7 +49,7 @@ namespace RoofsSeller.UI.ViewModel
         protected override async void OnDeleteExecute()
         {
             var result = await MessageDialogService.ShowOkCancelDialogAsync(
-                $"Вы действительно хотите удалить поставщика {Provider.Name}?", "Удаление");
+                $"Are you sure you want to remove provider {Provider.Name}?", "Deleting");
             if (result == MessageDialogResult.Ok)
             {
                 _providerRepository.Remove(Provider.Model);
@@ -65,7 +65,6 @@ namespace RoofsSeller.UI.ViewModel
                 && HasChanges;
         }
 
-        // Логика для SaveCommand
         protected override async void OnSaveExecute()
         {
             await _providerRepository.SaveAsync();

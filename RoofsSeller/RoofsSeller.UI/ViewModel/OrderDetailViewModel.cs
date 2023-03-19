@@ -136,7 +136,7 @@ namespace RoofsSeller.UI.ViewModel
         protected override async void OnDeleteExecute()
         {
             var result = await MessageDialogService.ShowOkCancelDialogAsync(
-                $"Вы действительно хотите удалить заказ №{Order.OrderNumber}?", "Удаление");
+                $"Are you sure you want to delete order #{Order.OrderNumber}?", "Deleting");
             if (result == MessageDialogResult.Ok)
             {
                 _orderRepository.Remove(Order.Model);
@@ -158,7 +158,7 @@ namespace RoofsSeller.UI.ViewModel
             HasChanges = _orderRepository.HasChanges();
             Id = Order.Id;
             RaiseDetailSavedEvent(Order.Id, 
-                $"Заказ №{Order.OrderNumber} от {Order.OrderDate.ToShortDateString()}");
+                $"Order #{Order.OrderNumber} dated {Order.OrderDate.ToShortDateString()}");
         }
 
         private async Task<Order> CreateNewOrder()
@@ -206,7 +206,7 @@ namespace RoofsSeller.UI.ViewModel
 
         private void SetTitle()
         {
-            Title = $"Заказ №{Order.OrderNumber} от {Order.OrderDate.ToShortDateString()}";
+            Title = $"Order #{Order.OrderNumber} date {Order.OrderDate.ToShortDateString()}";
         }
 
 
@@ -270,8 +270,8 @@ namespace RoofsSeller.UI.ViewModel
                 {
                     _productQuantityToAdd = SelectedAvailableProduct.StockBalance;
                     MessageDialogService.ShowInfoDialogAsync(
-                        $"Невозможно добавить заданное количество товара в заказ," +
-                        $" т.к. остаток товара на складе " +
+                        $"It is not possible to add the given quantity of goods to the order," +
+                        $" because the rest of the items in stock " +
                         $"{SelectedAvailableProduct.StockBalance} {SelectedAvailableProduct.ProductMeasure.Measure}");
                 }
                 OnPropertyChanged();
@@ -367,7 +367,7 @@ namespace RoofsSeller.UI.ViewModel
             {
                 _allProducts = await _orderRepository.GetAllProductsAsync();
                 SetupPicklist();
-                // При удалении заказа вылазит InvalidOperationException!!!!!!!!!
+                // ex is thrown while deleting the order InvalidOperationException!!!!!!!!!
                 //var order = await _orderRepository.GetByIdAsync(args.Id);
 
                 //InitializeOrderItems(order.OrderItems);

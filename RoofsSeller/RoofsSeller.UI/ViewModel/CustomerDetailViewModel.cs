@@ -67,13 +67,12 @@ namespace RoofsSeller.UI.ViewModel
             if (await _customerRepository.HasOrdersAsync(Customer.Id))
             {
                 await MessageDialogService
-                    .ShowInfoDialogAsync($"Невозможно удалить покупателя {Customer.Name}," +
-                    $" т.к. у него есть как минимум 1 заказ.");
+                    .ShowInfoDialogAsync($"Unable to delete customer {Customer.Name} because he has at least 1 order.");
                 return;
             }
 
             var result = await MessageDialogService.ShowOkCancelDialogAsync(
-                $"Вы действительно хотите удалить покупателя {Customer.Name}?", "Удаление");
+                $"Are you sure you want to delete customer {Customer.Name}?", "Deleting");
             if (result == MessageDialogResult.Ok)
             {
                 _customerRepository.Remove(Customer.Model);

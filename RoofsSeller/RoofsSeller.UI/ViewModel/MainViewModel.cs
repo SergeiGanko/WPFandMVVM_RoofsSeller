@@ -98,8 +98,7 @@ namespace RoofsSeller.UI.ViewModel
                 }
                 catch
                 {
-                    await _messageDialogService.ShowInfoDialogAsync("Невозможно загрузить данные," +
-                        "возможно сущность данные были удалены другим пользователем.");
+                    await _messageDialogService.ShowInfoDialogAsync("Unable to load data. Perhaps the entity data has been deleted by another user.");
                     await NavigationViewModel.LoadAsync();
                     return;
                 }

@@ -80,7 +80,7 @@ namespace RoofsSeller.UI.ViewModel
         protected override async void OnDeleteExecute()
         {
             var result = await MessageDialogService.ShowOkCancelDialogAsync(
-                $"Вы действительно хотите удалить продукт {Product.Name}?", "Удаление");
+                $"Are you sure you want to delete {Product.Name}?", "Deleting");
             if (result == MessageDialogResult.Ok)
             {
                 _productRepository.Remove(Product.Model);

@@ -33,12 +33,12 @@ namespace RoofsSeller.UI.ViewModel
         {
             _productLookupDataService = productLookupDataService;
 
-            Title = "Калькулятор вентканала";
+            Title = "Ventilation Duct Calculator";
 
             Metals = new ObservableCollection<LookupItem>();
 
-            KindsOfShell = new ObservableCollection<string> {"Вертикальная", "Горизонтальная", "Штучная"};
-            KindsOfUmbrella = new ObservableCollection<string> {"Эконом", "Стандарт", "Премиум"};
+            KindsOfShell = new ObservableCollection<string> {"Vertical", "Horizontal", "Custom"};
+            KindsOfUmbrella = new ObservableCollection<string> {"Basic", "Standard", "Premium"};
 
             CalculateCommand = new DelegateCommand(OnCalculateExecute, OnCalculateCanExecute);
         }
@@ -102,13 +102,13 @@ namespace RoofsSeller.UI.ViewModel
             PipeAbutment = new PipeAbutmentWrapper(abutment);
             var shell = new PipeShell
             {
-                KindOfShell = "Вертикальная"
+                KindOfShell = "Vertical"
             };
             PipeShell = new PipeShellWrapper(shell);
 
             var umbrella = new PipeUmbrella
             {
-                KindOfUmbrella = "Эконом"
+                KindOfUmbrella = "Basic"
             };
 
             PipeUmbrella = new PipeUmbrellaWrapper(umbrella);
@@ -359,15 +359,15 @@ namespace RoofsSeller.UI.ViewModel
         {
             switch (PipeShell.KindOfShell)
             {
-                case "Вертикальная":
+                case "Vertical":
                     SelectedViewModel = new VerticalShellViewModel(Pipe, PipeShell);
                     VerticalShellCalculate(a, b);
                     break;
-                case "Горизонтальная":
+                case "Horizontal":
                     SelectedViewModel = new HorizontalShellViewModel(Pipe, PipeShell);
                     HorizontalShellCalculate(a, b);
                     break;
-                case "Штучная":
+                case "Custom":
                     SelectedViewModel = new ExclusiveShellViewModel(Pipe, PipeShell);
                     ExclusiveShellCalculate(a, b);
                     break;
@@ -622,7 +622,7 @@ namespace RoofsSeller.UI.ViewModel
         {
             int a1 = 0;
             int b1 = 0;
-            if (PipeShell.KindOfShell is "Вертикальная")
+            if (PipeShell.KindOfShell is "Vertical")
             {
                 a1 = a + 30;
                 b1 = b + 30;
@@ -635,15 +635,15 @@ namespace RoofsSeller.UI.ViewModel
 
             switch (PipeUmbrella.KindOfUmbrella)
             {
-                case "Эконом":
+                case "Basic":
                     SelectedUmbrellaViewModel = new EconomUmbrellaViewModel(Pipe, PipeUmbrella);
                     EconomUmbrellaCalculate(a1, b1);
                     break;
-                case "Стандарт":
+                case "Standard":
                     SelectedUmbrellaViewModel = new StandartUmbrellaViewModel(Pipe, PipeUmbrella);
                     StandartUmbrellaCalculate(a1, b1);
                     break;
-                case "Премиум":
+                case "Premium":
                     SelectedUmbrellaViewModel = new PremiumUmbrellaViewModel(Pipe, PipeUmbrella);
                     PremiumUmbrellaCalculate(a1, b1);
                     break;
@@ -721,7 +721,7 @@ namespace RoofsSeller.UI.ViewModel
         private void UmbrellaMetalRequiredCalculate()
         {
             double metalRequired = 0;
-            if (PipeUmbrella.KindOfUmbrella == "Эконом")
+            if (PipeUmbrella.KindOfUmbrella == "Basic")
             {
                 metalRequired =
                 (PipeUmbrella.FitLengthSide13 * PipeUmbrella.FitWidthSide13 * PipeUmbrella.FitQuantitySide13 +
@@ -786,17 +786,17 @@ namespace RoofsSeller.UI.ViewModel
 
         private void UmbrellaCostCalculate()
         {
-            if (PipeUmbrella.KindOfUmbrella == "Эконом")
+            if (PipeUmbrella.KindOfUmbrella == "Basic")
             {
                 PipeUmbrella.UmbrellaCost =
                     Pipe.MetalSheetCost / 2.5M * Convert.ToDecimal(PipeUmbrella.MetalRequired) + 40M;
             }
-            else if (PipeUmbrella.KindOfUmbrella == "Стандарт")
+            else if (PipeUmbrella.KindOfUmbrella == "Standard")
             {
                 PipeUmbrella.UmbrellaCost =
                     Pipe.MetalSheetCost / 2.5M * Convert.ToDecimal(PipeUmbrella.MetalRequired) + 50M;
             }
-            else if (PipeUmbrella.KindOfUmbrella == "Премиум")
+            else if (PipeUmbrella.KindOfUmbrella == "Premium")
             {
                 PipeUmbrella.UmbrellaCost =
                     Pipe.MetalSheetCost / 2.5M * Convert.ToDecimal(PipeUmbrella.MetalRequired) + 85M;

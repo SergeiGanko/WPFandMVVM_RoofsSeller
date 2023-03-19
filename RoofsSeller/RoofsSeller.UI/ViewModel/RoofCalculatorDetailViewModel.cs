@@ -2,7 +2,6 @@
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using System.Windows.Media.Imaging;
 using Prism.Commands;
 using Prism.Events;
 using RoofsSeller.Model;
@@ -10,16 +9,19 @@ using RoofsSeller.Model.Entities;
 using RoofsSeller.UI.Data.Lookups;
 using RoofsSeller.UI.View.Services;
 using RoofsSeller.UI.Wrapper;
+using System.ComponentModel;
+using RoofsSeller.UI.ViewModel.SlopeTypesViewModel;
 
 namespace RoofsSeller.UI.ViewModel
 {
-    using System.ComponentModel;
-    using System.Threading;
-
-    using RoofsSeller.UI.ViewModel.SlopeTypesViewModel;
-
     public class RoofCalculatorDetailViewModel : DetailViewModelBase
     {
+        private const string ViewTitle = "Roof Calculator";
+        private const string Rectangle = "Rectangle";
+        private const string Triangle = "Triangle";
+        private const string Trapeze = "Trapeze";
+        private const string Parallelogram = "Parallelogram";
+
         private readonly IProductLookupDataService _productLookupDataService;
         private SlopeWrapper _slope;
         private SlopeWrapper _selectedSlope;
@@ -32,11 +34,11 @@ namespace RoofsSeller.UI.ViewModel
         {
             _productLookupDataService = productLookupDataService;
 
-            Title = "Калькулятор кровли";
+            Title = ViewTitle;
 
             Roofing = new ObservableCollection<LookupItem>();
 
-            SlopeTypes = new ObservableCollection<string> { "Прямоугольник", "Треугольник", "Трапеция", "Параллелограмм"};
+            SlopeTypes = new ObservableCollection<string> { Rectangle, Triangle, Trapeze, Parallelogram };
 
             ModuleEffectiveSquares = new ObservableCollection<double> { 0.770, 0.805, 0.910 };
 
@@ -130,7 +132,7 @@ namespace RoofsSeller.UI.ViewModel
         {
             var slope = new Slope
                             {
-                                SlopeType = "Прямоугольник",
+                                SlopeType = Rectangle,
                                 ModuleCost = 10.99M,
                                 ModuleEffectiveSquare = 0.77,
                                 SideA = 0,
@@ -158,16 +160,16 @@ namespace RoofsSeller.UI.ViewModel
         {
             switch (Slope.SlopeType)
             {
-                case "Прямоугольник":
+                case Rectangle:
                     SelectedViewModel = new RectangularSlopeViewModel(Slope);
                     break;
-                case "Треугольник":
+                case Triangle:
                     SelectedViewModel = new TriangularSlopeViewModel(Slope);
                     break;
-                case "Трапеция":
+                case Trapeze:
                     SelectedViewModel = new TrapezoidalSlopeViewModel(Slope);
                     break;
-                case "Параллелограмм":
+                case Parallelogram:
                     SelectedViewModel = new ParallelogramSlopeViewModel(Slope);
                     break;
             }
@@ -208,16 +210,16 @@ namespace RoofsSeller.UI.ViewModel
             double quantity = 0;
             switch (Slope.SlopeType)
             {
-                case "Прямоугольник":
+                case Rectangle:
                     Slope.SlopeSquare = Slope.SideA * Slope.SideB;
                     break;
-                case "Треугольник":
+                case Triangle:
                     Slope.SlopeSquare = (Slope.SideA * Slope.SlopeHeight) / 2.0;
                     break;
-                case "Трапеция":
+                case Trapeze:
                     Slope.SlopeSquare = Slope.SlopeHeight * (Slope.SideA + Slope.SideB) / 2.0;
                     break;
-                case "Параллелограмм":
+                case Parallelogram:
                     Slope.SlopeSquare = Slope.SideA * Slope.SlopeHeight;
                     break;
             }
