@@ -3,7 +3,6 @@ using RoofsSeller.Model.Entities;
 
 namespace RoofsSeller.UI.Data.Repositories
 {
-    // А надо ли нам репозиторий:??????
     public class OrderStateRepository :
         GenericRepository<OrderState, RoofsSellerDbContext>, IOrderStateRepository
     {

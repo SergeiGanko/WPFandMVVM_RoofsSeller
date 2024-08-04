@@ -1,13 +1,13 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoofsSeller.UI", "RoofsSeller.UI\RoofsSeller.UI.csproj", "{32FEDB40-860B-46A1-A35F-7018E04467A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoofsSeller.UI", "RoofsSeller.UI\RoofsSeller.UI.csproj", "{32FEDB40-860B-46A1-A35F-7018E04467A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoofsSeller.DataAccess", "RoofsSeller.DataAccess\RoofsSeller.DataAccess.csproj", "{92304774-29CF-4084-A00F-3B7AA537D4CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoofsSeller.DataAccess", "RoofsSeller.DataAccess\RoofsSeller.DataAccess.csproj", "{92304774-29CF-4084-A00F-3B7AA537D4CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoofsSeller.Model", "RoofsSeller.Model\RoofsSeller.Model.csproj", "{F00162F8-63FA-4455-8CA7-9FF1C38033A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RoofsSeller.Model", "RoofsSeller.Model\RoofsSeller.Model.csproj", "{F00162F8-63FA-4455-8CA7-9FF1C38033A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

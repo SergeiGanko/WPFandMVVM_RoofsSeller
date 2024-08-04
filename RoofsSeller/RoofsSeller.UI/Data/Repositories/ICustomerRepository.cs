@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using RoofsSeller.Model.Entities;
+﻿using RoofsSeller.Model.Entities;
 using System.Threading.Tasks;
 
 namespace RoofsSeller.UI.Data.Repositories
