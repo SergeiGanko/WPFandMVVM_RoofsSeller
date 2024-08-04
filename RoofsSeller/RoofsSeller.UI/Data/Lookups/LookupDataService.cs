@@ -46,7 +46,7 @@ namespace RoofsSeller.UI.Data.Lookups
                     new LookupItem
                     {
                         Id = p.Id,
-                        DisplayMember = "Заказ №" + p.OrderNumber.ToString() + " от " + p.OrderDate.ToString()
+                        DisplayMember = "Order #" + p.OrderNumber.ToString() + " of " + p.OrderDate.ToString()
                     })
                     .OrderBy(e => e.DisplayMember)
                     .ToListAsync();
@@ -150,7 +150,7 @@ namespace RoofsSeller.UI.Data.Lookups
             using (var ctx = _contextCreator())
             {
                 return await ctx.Products.AsNoTracking()
-                    .Where(p=>p.ProductType.Type == "Плоский лист")
+                    .Where(p=>p.ProductType.Type == "Flat metal sheet")
                     .Select(p =>
                         new LookupItemExtended()
                         {
@@ -168,7 +168,7 @@ namespace RoofsSeller.UI.Data.Lookups
             using (var ctx = _contextCreator())
             {
                 return await ctx.Products.AsNoTracking()
-                    .Where(p => p.ProductType.Type == "Модульная металлочерепица")
+                    .Where(p => p.ProductType.Type == "Modular metal tiles")
                     .Select(p =>
                         new LookupItemExtended()
                         {

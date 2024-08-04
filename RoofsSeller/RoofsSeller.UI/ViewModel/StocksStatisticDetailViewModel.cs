@@ -7,8 +7,8 @@ using RoofsSeller.UI.View.Services;
 using RoofsSeller.UI.Data.Repositories;
 using System.Collections.ObjectModel;
 using Prism.Commands;
-using LiveCharts;
-using LiveCharts.Wpf;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
 using System.Windows.Input;
 using RoofsSeller.Model.Entities;
 
@@ -33,14 +33,14 @@ namespace RoofsSeller.UI.ViewModel
 
             Products = new ObservableCollection<Product>();
             ProductTypes = new ObservableCollection<ProductType>();
-            SeriesCollection = new SeriesCollection();
+            SeriesCollection = new ObservableCollection<ISeries>();
             //Formatter = value => value.ToString("N");
             Labels = new List<string>();
 
             ShowStatCommand = new DelegateCommand(OnShowStatExecute);
         }
 
-        public SeriesCollection SeriesCollection { get; }
+        public ObservableCollection<ISeries> SeriesCollection { get; }
         public List<string> Labels { get; }
         public Func<double, string> Formatter { get; }
 
@@ -110,10 +110,10 @@ namespace RoofsSeller.UI.ViewModel
             {
                 if (product.ProductTypeId == SelectedProductType.Id)
                 {
-                    SeriesCollection.Add(new ColumnSeries
+                    SeriesCollection.Add(new ColumnSeries<int>
                     {
-                        Title = product.Name,
-                        Values = new ChartValues<int> { product.StockBalance }
+                        Name = product.Name,
+                        Values = new ObservableCollection<int> { product.StockBalance }
                     });
                     Labels.Add(product.ProductType.Type);
                 }
@@ -129,10 +129,10 @@ namespace RoofsSeller.UI.ViewModel
             {
                 if (product.ProductTypeId == SelectedProductType.Id)
                 {
-                    SeriesCollection.Add(new ColumnSeries
+                    SeriesCollection.Add(new ColumnSeries<int>
                     {
-                        Title = product.Name,
-                        Values = new ChartValues<int> { product.StockBalance }
+                        Name = product.Name,
+                        Values = new ObservableCollection<int> { product.StockBalance }
                     });
                     Labels.Add(product.ProductType.Type);
                 }

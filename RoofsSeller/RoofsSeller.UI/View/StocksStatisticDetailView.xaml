@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.WPF;assembly=LiveChartsCore.SkiaSharpView.WPF"
              xmlns:local="clr-namespace:RoofsSeller.UI.View"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
@@ -22,16 +22,6 @@
                     Command="{Binding ShowStatCommand}"/>
         </StackPanel>
 
-        <lvc:CartesianChart Grid.Row="1" Margin="10"
-                            Series="{Binding SeriesCollection}" LegendLocation="Bottom">
-            <lvc:CartesianChart.AxisX>
-                <lvc:Axis Labels="{Binding Labels, UpdateSourceTrigger=PropertyChanged}"
-                          FontSize="16"></lvc:Axis>
-            </lvc:CartesianChart.AxisX>
-            <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="{Binding SelectedProductMeasure.Measure, UpdateSourceTrigger=PropertyChanged}"
-                          FontSize="16"></lvc:Axis>
-            </lvc:CartesianChart.AxisY>
-        </lvc:CartesianChart>
+        <lvc:CartesianChart Grid.Row="1" Margin="10" Series="{Binding SeriesCollection}"></lvc:CartesianChart>
     </Grid>
 </UserControl>
